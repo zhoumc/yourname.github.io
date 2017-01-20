@@ -1,0 +1,869 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x672C;&amp;#x8282;&amp;#x5B66;&amp;#x4E60;&amp;#x5185;&amp;#x5BB9;&amp;#x5305;&amp;#x62EC;Python&amp;#x5217;&amp;#x8868;&amp;#x3001;Python&amp;#x5143;&amp;#x7EC4;&amp;#x4EE5;&amp;#x53CA;Python&amp;#x5B57;&amp;#x5178;&amp;#x3002;&amp;#x90FD;&amp;#x662F;&amp;#x51E0;&amp;#x79CD;&amp;#x4F7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记（五）">
+<meta property="og:url" content="http://yoursite.com/2016/12/04/Python学习笔记（五）/index.html">
+<meta property="og:site_name" content="Mincheng Fighting!">
+<meta property="og:description" content="&amp;#x672C;&amp;#x8282;&amp;#x5B66;&amp;#x4E60;&amp;#x5185;&amp;#x5BB9;&amp;#x5305;&amp;#x62EC;Python&amp;#x5217;&amp;#x8868;&amp;#x3001;Python&amp;#x5143;&amp;#x7EC4;&amp;#x4EE5;&amp;#x53CA;Python&amp;#x5B57;&amp;#x5178;&amp;#x3002;&amp;#x90FD;&amp;#x662F;&amp;#x51E0;&amp;#x79CD;&amp;#x4F7">
+<meta property="og:image" content="http://yoursite.com/2016/12/04/Python学习笔记（五）/Python列表脚本操作符.png">
+<meta property="og:image" content="http://yoursite.com/2016/12/04/Python学习笔记（五）/Python列表方法.png">
+<meta property="og:image" content="http://yoursite.com/2016/12/04/Python学习笔记（五）/Python字典方法.png">
+<meta property="og:updated_time" content="2016-12-12T02:09:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python学习笔记（五）">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x8282;&amp;#x5B66;&amp;#x4E60;&amp;#x5185;&amp;#x5BB9;&amp;#x5305;&amp;#x62EC;Python&amp;#x5217;&amp;#x8868;&amp;#x3001;Python&amp;#x5143;&amp;#x7EC4;&amp;#x4EE5;&amp;#x53CA;Python&amp;#x5B57;&amp;#x5178;&amp;#x3002;&amp;#x90FD;&amp;#x662F;&amp;#x51E0;&amp;#x79CD;&amp;#x4F7">
+<meta name="twitter:image" content="http://yoursite.com/2016/12/04/Python学习笔记（五）/Python列表脚本操作符.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/04/Python学习笔记（五）/"/>
+
+
+
+
+
+  <title> Python学习笔记（五） | Mincheng Fighting! </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?86bda6c465b38ac227d88824764ac1b8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mincheng Fighting!</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">敏程のBlog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/04/Python学习笔记（五）/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="MinCheng">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/头像.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Mincheng Fighting!">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Mincheng Fighting!" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python学习笔记（五）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-04T10:42:47+08:00">
+                2016-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/04/Python学习笔记（五）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/04/Python学习笔记（五）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x672C;&#x8282;&#x5B66;&#x4E60;&#x5185;&#x5BB9;&#x5305;&#x62EC;Python&#x5217;&#x8868;&#x3001;Python&#x5143;&#x7EC4;&#x4EE5;&#x53CA;Python&#x5B57;&#x5178;&#x3002;&#x90FD;&#x662F;&#x51E0;&#x79CD;&#x4F7F;&#x7528;&#x9891;&#x7E41;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x9700;&#x8981;&#x91CD;&#x70B9;&#x638C;&#x63E1;&#x3002;<br>&#x4EE5;&#x4E0B;&#x662F;&#x5177;&#x4F53;&#x7684;&#x5B66;&#x4E60;&#x5185;&#x5BB9;&#x3002;<br><a id="more"></a></p>
+<h2 id="Python&#x5217;&#x8868;"><a href="#Python&#x5217;&#x8868;" class="headerlink" title="Python&#x5217;&#x8868;"></a>Python&#x5217;&#x8868;</h2><h3 id="Python-&#x5217;&#x8868;"><a href="#Python-&#x5217;&#x8868;" class="headerlink" title="Python &#x5217;&#x8868;"></a>Python &#x5217;&#x8868;</h3><p>Python&#x6709;6&#x4E2A;&#x5E8F;&#x5217;&#x7684;&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x662F;&#x5217;&#x8868;&#x548C;&#x5143;&#x7EC4;&#x3002;</p>
+<p>&#x5217;&#x8868;&#x662F;&#x6700;&#x5E38;&#x7528;&#x7684;Python&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x65B9;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x9017;&#x53F7;&#x5206;&#x9694;&#x503C;&#x51FA;&#x73B0;&#x3002;<br>&#x5217;&#x8868;&#x7684;&#x6570;&#x636E;&#x9879;<strong>&#x4E0D;&#x9700;&#x8981;</strong>&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="&#x66F4;&#x65B0;&#x5217;&#x8868;"><a href="#&#x66F4;&#x65B0;&#x5217;&#x8868;" class="headerlink" title="&#x66F4;&#x65B0;&#x5217;&#x8868;"></a>&#x66F4;&#x65B0;&#x5217;&#x8868;</h3><p>&#x53EF;&#x4EE5;&#x7528;<code>append()</code>&#x65B9;&#x6CD5;&#x6765;&#x6DFB;&#x52A0;&#x5217;&#x8868;&#x9879;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;&#x5217;&#x8868;&#x5143;&#x7D20;"><a href="#&#x5220;&#x9664;&#x5217;&#x8868;&#x5143;&#x7D20;" class="headerlink" title="&#x5220;&#x9664;&#x5217;&#x8868;&#x5143;&#x7D20;"></a>&#x5220;&#x9664;&#x5217;&#x8868;&#x5143;&#x7D20;</h3><p>&#x4F7F;&#x7528;<code>del&#x8BED;&#x53E5;</code>&#x6765;&#x5220;&#x9664;&#x5217;&#x8868;&#x7684;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p>remove()&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="Python&#x5217;&#x8868;&#x811A;&#x672C;&#x64CD;&#x4F5C;&#x7B26;"><a href="#Python&#x5217;&#x8868;&#x811A;&#x672C;&#x64CD;&#x4F5C;&#x7B26;" class="headerlink" title="Python&#x5217;&#x8868;&#x811A;&#x672C;&#x64CD;&#x4F5C;&#x7B26;"></a>Python&#x5217;&#x8868;&#x811A;&#x672C;&#x64CD;&#x4F5C;&#x7B26;</h3><p><img src="/2016/12/04/Python&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E94;&#xFF09;/Python&#x5217;&#x8868;&#x811A;&#x672C;&#x64CD;&#x4F5C;&#x7B26;.png" alt="Python&#x5217;&#x8868;&#x811A;&#x672C;&#x64CD;&#x4F5C;&#x7B26;"></p>
+<h3 id="Python&#x5217;&#x8868;&#x622A;&#x53D6;"><a href="#Python&#x5217;&#x8868;&#x622A;&#x53D6;" class="headerlink" title="Python&#x5217;&#x8868;&#x622A;&#x53D6;"></a>Python&#x5217;&#x8868;&#x622A;&#x53D6;</h3><p>&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;&#x7C7B;&#x4F3C;&#x3002;</p>
+<p>&#x8D1F;&#x6570;&#xFF0C;&#x4EE3;&#x8868;&#x8BFB;&#x51FA;&#x5012;&#x6570;&#x7B2C;x&#x4E2A;&#x3002;</p>
+<h3 id="Python&#x5217;&#x8868;&#x51FD;&#x6570;-amp-&#x65B9;&#x6CD5;"><a href="#Python&#x5217;&#x8868;&#x51FD;&#x6570;-amp-&#x65B9;&#x6CD5;" class="headerlink" title="Python&#x5217;&#x8868;&#x51FD;&#x6570;&amp;&#x65B9;&#x6CD5;"></a>Python&#x5217;&#x8868;&#x51FD;&#x6570;&amp;&#x65B9;&#x6CD5;</h3><p>&#x51FD;&#x6570;&#xFF1A;cmp&#x3001;max&#x3001;min&#x3001;len&#x3001;list(seq)&#x5C06;&#x5143;&#x7EC4;&#x8F6C;&#x6362;&#x4E3A;&#x5217;&#x8868;</p>
+<p>&#x65B9;&#x6CD5;&#xFF1A;<br><img src="/2016/12/04/Python&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E94;&#xFF09;/Python&#x5217;&#x8868;&#x65B9;&#x6CD5;.png" alt="Python&#x5217;&#x8868;&#x65B9;&#x6CD5;"></p>
+<hr>
+<h2 id="Python&#x5143;&#x7EC4;"><a href="#Python&#x5143;&#x7EC4;" class="headerlink" title="Python&#x5143;&#x7EC4;"></a>Python&#x5143;&#x7EC4;</h2><h3 id="Python&#x5143;&#x7EC4;-1"><a href="#Python&#x5143;&#x7EC4;-1" class="headerlink" title="Python&#x5143;&#x7EC4;"></a>Python&#x5143;&#x7EC4;</h3><p>Python&#x7684;&#x5143;&#x7EC4;&#x4E0E;&#x5217;&#x8868;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5143;&#x7EC4;&#x7684;&#x5143;&#x7D20;<strong>&#x4E0D;&#x80FD;&#x4FEE;&#x6539;</strong>&#x3002;</p>
+<p>&#x5143;&#x7EC4;&#x4F7F;&#x7528;&#x5C0F;&#x62EC;&#x53F7;&#xFF0C;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x3002;</p>
+<p>&#x5143;&#x7EC4;&#x4E2D;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x5143;&#x7D20;&#x540E;&#x9762;<strong>&#x6DFB;&#x52A0;&#x9017;&#x53F7;</strong>&#x3002;&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tup1 = (<span class="number">50</span>,);</div></pre></td></tr></table></figure>
+<h3 id="&#x4FEE;&#x6539;&#x5143;&#x7EC4;"><a href="#&#x4FEE;&#x6539;&#x5143;&#x7EC4;" class="headerlink" title="&#x4FEE;&#x6539;&#x5143;&#x7EC4;"></a>&#x4FEE;&#x6539;&#x5143;&#x7EC4;</h3><p>&#x4E0D;&#x5141;&#x8BB8;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x5BF9;&#x5143;&#x7EC4;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x7EC4;&#x5408;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;&#x5143;&#x7EC4;"><a href="#&#x5220;&#x9664;&#x5143;&#x7EC4;" class="headerlink" title="&#x5220;&#x9664;&#x5143;&#x7EC4;"></a>&#x5220;&#x9664;&#x5143;&#x7EC4;</h3><p>&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x503C;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x5220;&#x9664;&#x7684;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;del&#x8BED;&#x53E5;&#x6765;&#x5220;&#x9664;<strong>&#x6574;&#x4E2A;</strong>&#x5143;&#x7EC4;&#x3002;</p>
+<h3 id="&#x65E0;&#x5173;&#x95ED;&#x5206;&#x9694;&#x7B26;"><a href="#&#x65E0;&#x5173;&#x95ED;&#x5206;&#x9694;&#x7B26;" class="headerlink" title="&#x65E0;&#x5173;&#x95ED;&#x5206;&#x9694;&#x7B26;"></a>&#x65E0;&#x5173;&#x95ED;&#x5206;&#x9694;&#x7B26;</h3><p>&#x4EFB;&#x610F;&#x65E0;&#x7B26;&#x53F7;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x9017;&#x53F7;&#x9694;&#x5F00;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5143;&#x7EC4;&#x3002;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="keyword">print</span> <span class="string">&apos;abc&apos;</span>, <span class="number">-4.24e93</span>, <span class="number">18</span>+<span class="number">6.6j</span>, <span class="string">&apos;xyz&apos;</span>;</div><div class="line">x, y = <span class="number">1</span>, <span class="number">2</span>;</div><div class="line"><span class="keyword">print</span> <span class="string">&quot;Value of x , y : &quot;</span>, x,y;</div></pre></td></tr></table></figure></p>
+<p>&#x7ED3;&#x679C;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">abc -4.24e+93 (18+6.6j) xyz</div><div class="line">Value of x , y : 1 2</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="Python&#x5B57;&#x5178;"><a href="#Python&#x5B57;&#x5178;" class="headerlink" title="Python&#x5B57;&#x5178;"></a>Python&#x5B57;&#x5178;</h2><h3 id="&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;"><a href="#&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;" class="headerlink" title="&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;"></a>&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;</h3><p>&#x5B57;&#x5178;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x53EF;&#x53D8;&#x5BB9;&#x5668;&#x6A21;&#x578B;&#xFF0C;&#x4E14;&#x53EF;&#x5B58;&#x50A8;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5B57;&#x5178;&#x7684;&#x6BCF;&#x4E2A;&#x952E;&#x503C;(key=&gt;value)&#x5BF9;&#x7528;<code>:</code>&#x5206;&#x5272;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x4E4B;&#x95F4;&#x7528;<code>,</code>&#x5206;&#x5272;&#xFF0C;&#x6574;&#x4E2A;&#x5B57;&#x5178;&#x5305;&#x62EC;&#x5728;<code>{}</code>&#x3002;</p>
+<p>&#x952E;<strong>&#x5FC5;&#x987B;&#x662F;&#x552F;&#x4E00;</strong>&#x7684;&#xFF0C;&#x4F46;&#x503C;&#x5219;&#x4E0D;&#x5FC5;&#x3002;&#x503C;&#x53EF;&#x4EE5;&#x53D6;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x952E;&#x5FC5;&#x987B;&#x662F;<strong>&#x4E0D;&#x53EF;&#x53D8;</strong>&#x7684;&#xFF0C;&#x5982;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6570;&#x5B57;&#x6216;&#x5143;&#x7EC4;&#x3002;</p>
+<h3 id="&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;-1"><a href="#&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;-1" class="headerlink" title="&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;"></a>&#x8BBF;&#x95EE;&#x5B57;&#x5178;&#x91CC;&#x7684;&#x503C;</h3><p>&#x628A;&#x76F8;&#x5E94;&#x7684;&#x952E;&#x653E;&#x5165;&#x719F;&#x6089;&#x7684;&#x65B9;&#x62EC;&#x5F27;&#x3002;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"> </div><div class="line">dict = {<span class="string">&apos;Name&apos;</span>: <span class="string">&apos;Zara&apos;</span>, <span class="string">&apos;Age&apos;</span>: <span class="number">7</span>, <span class="string">&apos;Class&apos;</span>: <span class="string">&apos;First&apos;</span>};</div><div class="line"> </div><div class="line"><span class="keyword">print</span> <span class="string">&quot;dict[&apos;Name&apos;]: &quot;</span>, dict[<span class="string">&apos;Name&apos;</span>];</div><div class="line"><span class="keyword">print</span> <span class="string">&quot;dict[&apos;Age&apos;]: &quot;</span>, dict[<span class="string">&apos;Age&apos;</span>];</div></pre></td></tr></table></figure></p>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dict[<span class="string">&apos;Name&apos;</span>]:  Zara</div><div class="line">dict[<span class="string">&apos;Age&apos;</span>]:  7</div></pre></td></tr></table></figure>
+<p>&#x5982;&#x679C;&#x7528;&#x5B57;&#x5178;&#x91CC;<strong>&#x6CA1;&#x6709;&#x7684;&#x952E;</strong>&#x8BBF;&#x95EE;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x3002;</p>
+<h3 id="&#x4FEE;&#x6539;&#x5B57;&#x5178;"><a href="#&#x4FEE;&#x6539;&#x5B57;&#x5178;" class="headerlink" title="&#x4FEE;&#x6539;&#x5B57;&#x5178;"></a>&#x4FEE;&#x6539;&#x5B57;&#x5178;</h3><p>&#x5411;&#x5B57;&#x5178;&#x6DFB;&#x52A0;&#x65B0;&#x5185;&#x5BB9;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x952E;/&#x503C;&#x5BF9;&#xFF0C;&#x4FEE;&#x6539;&#x6216;&#x5220;&#x9664;&#x5DF2;&#x6709;&#x952E;/&#x503C;&#x5BF9;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;&#x5B57;&#x5178;&#x5143;&#x7D20;"><a href="#&#x5220;&#x9664;&#x5B57;&#x5178;&#x5143;&#x7D20;" class="headerlink" title="&#x5220;&#x9664;&#x5B57;&#x5178;&#x5143;&#x7D20;"></a>&#x5220;&#x9664;&#x5B57;&#x5178;&#x5143;&#x7D20;</h3><p>&#x80FD;&#x5220;&#x5355;&#x4E00;&#x7684;&#x5143;&#x7D20;&#x4E5F;&#x80FD;&#x6E05;&#x7A7A;&#x5B57;&#x5178;&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"> </div><div class="line">dict = {<span class="string">&apos;Name&apos;</span>: <span class="string">&apos;Zara&apos;</span>, <span class="string">&apos;Age&apos;</span>: <span class="number">7</span>, <span class="string">&apos;Class&apos;</span>: <span class="string">&apos;First&apos;</span>};</div><div class="line"> </div><div class="line"><span class="keyword">del</span> dict[<span class="string">&apos;Name&apos;</span>]; <span class="comment"># &#x5220;&#x9664;&#x952E;&#x662F;&apos;Name&apos;&#x7684;&#x6761;&#x76EE;</span></div><div class="line">dict.clear();     <span class="comment"># &#x6E05;&#x7A7A;&#x8BCD;&#x5178;&#x6240;&#x6709;&#x6761;&#x76EE;</span></div><div class="line"><span class="keyword">del</span> dict ;        <span class="comment"># &#x5220;&#x9664;&#x8BCD;&#x5178;</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span> <span class="string">&quot;dict[&apos;Age&apos;]: &quot;</span>, dict[<span class="string">&apos;Age&apos;</span>];</div><div class="line"><span class="keyword">print</span> <span class="string">&quot;dict[&apos;School&apos;]: &quot;</span>, dict[<span class="string">&apos;School&apos;</span>];</div></pre></td></tr></table></figure></p>
+<h3 id="&#x5B57;&#x5178;&#x952E;&#x7684;&#x7279;&#x6027;"><a href="#&#x5B57;&#x5178;&#x952E;&#x7684;&#x7279;&#x6027;" class="headerlink" title="&#x5B57;&#x5178;&#x952E;&#x7684;&#x7279;&#x6027;"></a>&#x5B57;&#x5178;&#x952E;&#x7684;&#x7279;&#x6027;</h3><p>&#x5B57;&#x5178;&#x503C;&#x53EF;&#x4EE5;&#x6CA1;&#x6709;&#x9650;&#x5236;&#x5730;&#x53D6;&#x4EFB;&#x4F55;python&#x5BF9;&#x8C61;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x6807;&#x51C6;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4F46;&#x952E;&#x4E0D;&#x884C;&#x3002;</p>
+<p>&#x4E0D;&#x5141;&#x8BB8;&#x540C;&#x4E00;&#x4E2A;&#x952E;&#x51FA;&#x73B0;&#x4E24;&#x6B21;&#x3002;&#x521B;&#x5EFA;&#x65F6;&#x5982;&#x679C;&#x540C;&#x4E00;&#x4E2A;&#x952E;&#x88AB;&#x8D4B;&#x503C;&#x4E24;&#x6B21;&#xFF0C;<strong>&#x540E;&#x4E00;&#x4E2A;&#x503C;</strong>&#x4F1A;&#x88AB;&#x8BB0;&#x4F4F;&#x3002;</p>
+<p>&#x952E;&#x5FC5;&#x987B;&#x4E0D;&#x53EF;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x6570;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5143;&#x7EC4;&#x5145;&#x5F53;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x5217;&#x8868;&#x5C31;&#x4E0D;&#x884C;&#x3002;&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"> </div><div class="line">dict = {[<span class="string">&apos;Name&apos;</span>]: <span class="string">&apos;Zara&apos;</span>, <span class="string">&apos;Age&apos;</span>: <span class="number">7</span>};</div><div class="line"> </div><div class="line"><span class="keyword">print</span> <span class="string">&quot;dict[&apos;Name&apos;]: &quot;</span>, dict[<span class="string">&apos;Name&apos;</span>];</div></pre></td></tr></table></figure>
+<p>&#x7ED3;&#x679C;&#x4F1A;&#x62A5;<code>TypeError: list objects are unhashable</code>&#x9519;&#x3002;</p>
+<h3 id="&#x5B57;&#x5178;&#x5185;&#x7F6E;&#x51FD;&#x6570;-amp-&#x65B9;&#x6CD5;"><a href="#&#x5B57;&#x5178;&#x5185;&#x7F6E;&#x51FD;&#x6570;-amp-&#x65B9;&#x6CD5;" class="headerlink" title="&#x5B57;&#x5178;&#x5185;&#x7F6E;&#x51FD;&#x6570;&amp;&#x65B9;&#x6CD5;"></a>&#x5B57;&#x5178;&#x5185;&#x7F6E;&#x51FD;&#x6570;&amp;&#x65B9;&#x6CD5;</h3><p>&#x51FD;&#x6570;&#xFF1A;</p>
+<p>len(dict)&#x2014;&#x2014;&#x8BA1;&#x7B97;&#x5B57;&#x5178;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#xFF0C;&#x5373;&#x952E;&#x7684;&#x603B;&#x6570;&#x3002; </p>
+<p>str(dict)&#x2014;&#x2014;&#x8F93;&#x51FA;&#x5B57;&#x5178;&#x53EF;&#x6253;&#x5370;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x3002;</p>
+<p>type(variable)&#x2014;&#x2014;&#x8FD4;&#x56DE;&#x8F93;&#x5165;&#x7684;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x662F;&#x5B57;&#x5178;&#x5C31;&#x8FD4;&#x56DE;&#x5B57;&#x5178;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p><img src="/2016/12/04/Python&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E94;&#xFF09;/Python&#x5B57;&#x5178;&#x65B9;&#x6CD5;.png" alt="Python&#x5B57;&#x5178;&#x65B9;&#x6CD5;"></p>
+<hr>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x8865;&#x4E86;&#x524D;&#x51E0;&#x5929;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x518D;&#x6709;&#x4E00;&#x4E24;&#x5929;&#x5C31;&#x8981;&#x628A;&#x57FA;&#x7840;&#x6559;&#x7A0B;&#x90E8;&#x5206;&#x7ED9;&#x7ED3;&#x675F;&#x3002;&#x7136;&#x540E;&#x8FB9;&#x9009;&#x770B;&#x9AD8;&#x7EA7;&#x6559;&#x7A0B;&#xFF0C;&#x8FB9;&#x770B;&#x6570;&#x636E;&#x5904;&#x7406;&#xFF0C;&#x8FB9;&#x770B;sklearn&#x7684;&#x5305;&#xFF0C;&#x8FB9;&#x7EC3;&#x624B;&#x3002;</p>
+<p>&#x5341;&#x4E8C;&#x6708;&#x4F1A;&#x975E;&#x5E38;&#x7684;&#x5FD9;&#xFF0C;&#x4F46;&#x662F;&#x575A;&#x6301;&#x8FC7;&#x53BB;&#x5C31;&#x597D;&#x3002;&#x52A0;&#x6CB9;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/28/Python学习笔记（四）/" rel="next" title="Python学习笔记（四）">
+                <i class="fa fa-chevron-left"></i> Python学习笔记（四）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/05/Python学习笔记（六）/" rel="prev" title="Python学习笔记（六）">
+                Python学习笔记（六） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/04/Python学习笔记（五）/"
+           data-title="Python学习笔记（五）" data-url="http://yoursite.com/2016/12/04/Python学习笔记（五）/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/image/头像.jpeg"
+               alt="MinCheng" />
+          <p class="site-author-name" itemprop="name">MinCheng</p>
+          <p class="site-description motion-element" itemprop="description">技术渣渣但爱学习，常年自灌鸡汤的女屌丝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python列表"><span class="nav-number">1.</span> <span class="nav-text">Python列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-列表"><span class="nav-number">1.1.</span> <span class="nav-text">Python 列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新列表"><span class="nav-number">1.2.</span> <span class="nav-text">更新列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除列表元素"><span class="nav-number">1.3.</span> <span class="nav-text">删除列表元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python列表脚本操作符"><span class="nav-number">1.4.</span> <span class="nav-text">Python列表脚本操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python列表截取"><span class="nav-number">1.5.</span> <span class="nav-text">Python列表截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python列表函数-amp-方法"><span class="nav-number">1.6.</span> <span class="nav-text">Python列表函数&方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python元组"><span class="nav-number">2.</span> <span class="nav-text">Python元组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python元组-1"><span class="nav-number">2.1.</span> <span class="nav-text">Python元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改元组"><span class="nav-number">2.2.</span> <span class="nav-text">修改元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元组"><span class="nav-number">2.3.</span> <span class="nav-text">删除元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无关闭分隔符"><span class="nav-number">2.4.</span> <span class="nav-text">无关闭分隔符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python字典"><span class="nav-number">3.</span> <span class="nav-text">Python字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问字典里的值"><span class="nav-number">3.1.</span> <span class="nav-text">访问字典里的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问字典里的值-1"><span class="nav-number">3.2.</span> <span class="nav-text">访问字典里的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改字典"><span class="nav-number">3.3.</span> <span class="nav-text">修改字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除字典元素"><span class="nav-number">3.4.</span> <span class="nav-text">删除字典元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典键的特性"><span class="nav-number">3.5.</span> <span class="nav-text">字典键的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典内置函数-amp-方法"><span class="nav-number">3.6.</span> <span class="nav-text">字典内置函数&方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MinCheng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhoumc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

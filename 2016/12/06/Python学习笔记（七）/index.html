@@ -1,0 +1,922 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Python&amp;#x57FA;&amp;#x7840;&amp;#x8BED;&amp;#x6CD5;&amp;#x90E8;&amp;#x5206;&amp;#x7684;&amp;#x5B66;&amp;#x4E60;&amp;#x5FEB;&amp;#x8981;&amp;#x63A5;&amp;#x8FD1;&amp;#x5C3E;&amp;#x58F0;&amp;#xFF0C;&amp;#x4ECA;&amp;#x5929;&amp;#x5B66;&amp;#x4E60;&amp;#x4E86;Python&amp;#x6A21;&amp;#x5757;&amp;#x4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记（七）">
+<meta property="og:url" content="http://yoursite.com/2016/12/06/Python学习笔记（七）/index.html">
+<meta property="og:site_name" content="Mincheng Fighting!">
+<meta property="og:description" content="Python&amp;#x57FA;&amp;#x7840;&amp;#x8BED;&amp;#x6CD5;&amp;#x90E8;&amp;#x5206;&amp;#x7684;&amp;#x5B66;&amp;#x4E60;&amp;#x5FEB;&amp;#x8981;&amp;#x63A5;&amp;#x8FD1;&amp;#x5C3E;&amp;#x58F0;&amp;#xFF0C;&amp;#x4ECA;&amp;#x5929;&amp;#x5B66;&amp;#x4E60;&amp;#x4E86;Python&amp;#x6A21;&amp;#x5757;&amp;#x4">
+<meta property="og:image" content="http://yoursite.com/2016/12/06/Python学习笔记（七）/Python文件对象属性.png">
+<meta property="og:updated_time" content="2016-12-12T01:28:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python学习笔记（七）">
+<meta name="twitter:description" content="Python&amp;#x57FA;&amp;#x7840;&amp;#x8BED;&amp;#x6CD5;&amp;#x90E8;&amp;#x5206;&amp;#x7684;&amp;#x5B66;&amp;#x4E60;&amp;#x5FEB;&amp;#x8981;&amp;#x63A5;&amp;#x8FD1;&amp;#x5C3E;&amp;#x58F0;&amp;#xFF0C;&amp;#x4ECA;&amp;#x5929;&amp;#x5B66;&amp;#x4E60;&amp;#x4E86;Python&amp;#x6A21;&amp;#x5757;&amp;#x4">
+<meta name="twitter:image" content="http://yoursite.com/2016/12/06/Python学习笔记（七）/Python文件对象属性.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/06/Python学习笔记（七）/"/>
+
+
+
+
+
+  <title> Python学习笔记（七） | Mincheng Fighting! </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?86bda6c465b38ac227d88824764ac1b8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mincheng Fighting!</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">敏程のBlog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/06/Python学习笔记（七）/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="MinCheng">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/头像.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Mincheng Fighting!">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Mincheng Fighting!" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python学习笔记（七）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-06T15:40:41+08:00">
+                2016-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/06/Python学习笔记（七）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/06/Python学习笔记（七）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#x90E8;&#x5206;&#x7684;&#x5B66;&#x4E60;&#x5FEB;&#x8981;&#x63A5;&#x8FD1;&#x5C3E;&#x58F0;&#xFF0C;&#x4ECA;&#x5929;&#x5B66;&#x4E60;&#x4E86;Python&#x6A21;&#x5757;&#x4EE5;&#x53CA;Python&#x6587;&#x4EF6;I/O&#x3002;<br>&#x4EE5;&#x4E0B;&#x662F;&#x5177;&#x4F53;&#x7684;&#x5B66;&#x4E60;&#x5185;&#x5BB9;&#x3002;<br><a id="more"></a></p>
+<h2 id="Python&#x6A21;&#x5757;"><a href="#Python&#x6A21;&#x5757;" class="headerlink" title="Python&#x6A21;&#x5757;"></a>Python&#x6A21;&#x5757;</h2><h3 id="Python&#x6A21;&#x5757;-1"><a href="#Python&#x6A21;&#x5757;-1" class="headerlink" title="Python&#x6A21;&#x5757;"></a>Python&#x6A21;&#x5757;</h3><p>&#x6709;&#x903B;&#x8F91;&#x5730;&#x7EC4;&#x7EC7;Python&#x4EE3;&#x7801;&#x6BB5;&#x3001;&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x597D;&#x7528;&#xFF0C;&#x66F4;&#x6613;&#x61C2;&#x3002;</p>
+<p>&#x6A21;&#x5757;&#x4E5F;&#x662F;Python&#x5BF9;&#x8C61;&#xFF0C;&#x5177;&#x6709;<code>&#x968F;&#x673A;&#x7684;&#x540D;&#x5B57;&#x5C5E;&#x6027;</code>&#x7528;&#x6765;<strong>&#x7ED1;&#x5B9A;</strong>&#x6216;<strong>&#x5F15;&#x7528;</strong>&#x3002;</p>
+<h3 id="import&#x8BED;&#x53E5;"><a href="#import&#x8BED;&#x53E5;" class="headerlink" title="import&#x8BED;&#x53E5;"></a>import&#x8BED;&#x53E5;</h3><p>&#x8BED;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import module1[, module2[,... moduleN]</div></pre></td></tr></table></figure>
+<p>&#x6A21;&#x5757;&#x5728;<strong>&#x5F53;&#x524D;&#x7684;&#x641C;&#x7D22;&#x8DEF;&#x5F84;</strong>&#x5C31;&#x4F1A;&#x88AB;&#x5BFC;&#x5165;&#x3002;</p>
+<p>&#x8981;&#x60F3;&#x5BFC;&#x5165;&#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x547D;&#x4EE4;&#x653E;&#x5728;&#x811A;&#x672C;&#x7684;<strong>&#x9876;&#x7AEF;</strong>&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x53EA;&#x4F1A;&#x88AB;&#x5BFC;&#x5165;&#x4E00;&#x6B21;&#x3002;</p>
+<h3 id="From&#x2026;import&#x8BED;&#x53E5;"><a href="#From&#x2026;import&#x8BED;&#x53E5;" class="headerlink" title="From&#x2026;import&#x8BED;&#x53E5;"></a>From&#x2026;import&#x8BED;&#x53E5;</h3><p>&#x4ECE;&#x6A21;&#x5757;&#x4E2D;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;<strong>&#x6307;&#x5B9A;&#x7684;&#x90E8;&#x5206;</strong>&#x5230;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;</p>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from modname import name1[, name2[, ... nameN]]</div></pre></td></tr></table></figure></p>
+<p><strong>&#x4E0D;&#x4F1A;</strong>&#x628A;&#x6574;&#x4E2A;&#x6A21;&#x5757;&#x5BFC;&#x5165;&#xFF0C;&#x53EA;&#x4F1A;&#x5C06;&#x6A21;&#x5757;&#x91CC;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x90E8;&#x5206;<strong>&#x5355;&#x4E2A;&#x5F15;&#x5165;&#x5230;</strong>&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x58F0;&#x660E;&#x7684;&#x6A21;&#x5757;&#x7684;&#x5168;&#x5C40;&#x7B26;&#x53F7;&#x8868;&#x3002;</p>
+<h3 id="From&#x2026;import-&#x8BED;&#x53E5;"><a href="#From&#x2026;import-&#x8BED;&#x53E5;" class="headerlink" title="From&#x2026;import* &#x8BED;&#x53E5;"></a>From&#x2026;import* &#x8BED;&#x53E5;</h3><p>&#x628A;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7684;<strong>&#x6240;&#x6709;&#x5185;&#x5BB9;</strong>&#x5168;&#x90FD;&#x5BFC;&#x5165;&#x5230;&#x5F53;&#x524D;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</p>
+<h3 id="&#x5B9A;&#x4F4D;&#x6A21;&#x5757;"><a href="#&#x5B9A;&#x4F4D;&#x6A21;&#x5757;" class="headerlink" title="&#x5B9A;&#x4F4D;&#x6A21;&#x5757;"></a>&#x5B9A;&#x4F4D;&#x6A21;&#x5757;</h3><p>Python&#x89E3;&#x6790;&#x5668;&#x5BF9;&#x6A21;&#x5757;&#x4F4D;&#x7F6E;&#x7684;&#x641C;&#x7D22;&#x987A;&#x5E8F;&#x662F;:</p>
+<blockquote>
+<ul>
+<li>&#x5F53;&#x524D;&#x76EE;&#x5F55;</li>
+<li>&#x5982;&#x679C;&#x4E0D;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;Python&#x5219;&#x641C;&#x7D22;&#x5728;shell&#x53D8;&#x91CF;PYTHONPATH&#x4E0B;&#x7684;&#x6BCF;&#x4E2A;&#x76EE;&#x5F55;</li>
+<li>&#x5982;&#x679C;&#x90FD;&#x627E;&#x4E0D;&#x5230;&#xFF0C;Python&#x4F1A;&#x67E5;&#x770B;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x3002;UNIX&#x4E0B;&#xFF0C;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x4E00;&#x822C;&#x4E3A;/usr/local/lib/python/</li>
+</ul>
+</blockquote>
+<h3 id="PYTHONPATH&#x53D8;&#x91CF;"><a href="#PYTHONPATH&#x53D8;&#x91CF;" class="headerlink" title="PYTHONPATH&#x53D8;&#x91CF;"></a>PYTHONPATH&#x53D8;&#x91CF;</h3><p>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x7531;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x91CC;&#x7684;&#x8BB8;&#x591A;&#x76EE;&#x5F55;&#x7EC4;&#x6210;&#x3002;<br>&#x5728;Windows&#x7CFB;&#x7EDF;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> PYTHONPATH=c:\python20\lib;</div></pre></td></tr></table></figure></p>
+<p>&#x5728;UNIX&#x7CFB;&#x7EDF;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> PYTHONPATH=/usr/<span class="built_in">local</span>/lib/python</div></pre></td></tr></table></figure></p>
+<h3 id="&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x548C;&#x4F5C;&#x7528;&#x57DF;"><a href="#&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x548C;&#x4F5C;&#x7528;&#x57DF;" class="headerlink" title="&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x548C;&#x4F5C;&#x7528;&#x57DF;"></a>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x548C;&#x4F5C;&#x7528;&#x57DF;</h3><p>&#x53D8;&#x91CF;&#x2014;&#x2014;&#x62E5;&#x6709;&#x5339;&#x914D;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x5B57;&#xFF08;&#x6807;&#x8BC6;&#x7B26;&#xFF09;&#x3002;</p>
+<p>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x2014;&#x2014;&#x5305;&#x542B;&#x4E86;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x4EEC;&#xFF08;&#x952E;&#xFF09;&#x548C;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x76F8;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x4EEC;&#xFF08;&#x503C;&#xFF09;&#x7684;&#x5B57;&#x5178;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x548C;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x91CD;&#x540D;&#xFF0C;&#x5219;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4F1A;<strong>&#x8986;&#x76D6;</strong>&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+<p>Python&#x5047;&#x8BBE;&#x4EFB;&#x4F55;&#x5728;&#x51FD;&#x6570;&#x5185;&#x8D4B;&#x503C;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x5C40;&#x90E8;&#x7684;&#x3002;&#x7ED9;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x8D4B;&#x503C;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>global&#x8BED;&#x53E5;</code>&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;&#x6211;&#x4EEC;&#x5728;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x91CC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;money&#x3002;&#x6211;&#x4EEC;&#x518D;&#x5728;&#x51FD;&#x6570;&#x5185;&#x7ED9;&#x53D8;&#x91CF;money&#x8D4B;&#x503C;&#xFF0C;&#x7136;&#x540E;Python&#x4F1A;&#x5047;&#x5B9A;money&#x662F;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x6CA1;&#x6709;&#x5728;&#x8BBF;&#x95EE;&#x524D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;money&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;UnboundLocalError&#x7684;&#x9519;&#x8BEF;&#x3002;&#x53D6;&#x6D88;global&#x8BED;&#x53E5;&#x7684;&#x6CE8;&#x91CA;&#x5C31;&#x80FD;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"> </div><div class="line">Money = <span class="number">2000</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">AddMoney</span><span class="params">()</span>:</span></div><div class="line">   <span class="comment"># &#x60F3;&#x6539;&#x6B63;&#x4EE3;&#x7801;&#x5C31;&#x53D6;&#x6D88;&#x4EE5;&#x4E0B;&#x6CE8;&#x91CA;:</span></div><div class="line">   <span class="comment"># global Money</span></div><div class="line">   Money = Money + <span class="number">1</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span> Money</div><div class="line">AddMoney()</div><div class="line"><span class="keyword">print</span> Money</div></pre></td></tr></table></figure>
+<h3 id="dir-&#x51FD;&#x6570;"><a href="#dir-&#x51FD;&#x6570;" class="headerlink" title="dir()&#x51FD;&#x6570;"></a>dir()&#x51FD;&#x6570;</h3><p>dir()&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<strong>&#x6392;&#x597D;&#x5E8F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;</strong>&#xFF0C;&#x5185;&#x5BB9;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x91CC;&#x5B9A;&#x4E49;&#x8FC7;&#x7684;&#x540D;&#x5B57;&#x3002;</p>
+<p>&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E32;&#x53D8;&#x91CF;<strong>name</strong>&#x6307;&#x5411;&#x6A21;&#x5757;&#x7684;&#x540D;&#x5B57;&#xFF0C;<strong>file</strong>&#x6307;&#x5411;&#x8BE5;&#x6A21;&#x5757;&#x7684;&#x5BFC;&#x5165;&#x6587;&#x4EF6;&#x540D;&#x3002;</p>
+<h3 id="globals-&#x548C;locals-&#x51FD;&#x6570;"><a href="#globals-&#x548C;locals-&#x51FD;&#x6570;" class="headerlink" title="globals()&#x548C;locals()&#x51FD;&#x6570;"></a>globals()&#x548C;locals()&#x51FD;&#x6570;</h3><p>&#x8FD4;&#x56DE;&#x5168;&#x5C40;&#x548C;&#x5C40;&#x90E8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x91CC;&#x7684;&#x540D;&#x5B57;&#x3002;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x90FD;&#x662F;<strong>&#x5B57;&#x5178;</strong>&#x3002;&#x6240;&#x4EE5;&#x540D;&#x5B57;&#x4EEC;&#x80FD;&#x7528;<code>keys()&#x51FD;&#x6570;</code>&#x6458;&#x53D6;&#x3002;</p>
+<ul>
+<li><p>&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8C03;&#x7528;locals()&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6240;&#x6709;&#x80FD;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x8BBF;&#x95EE;&#x7684;&#x547D;&#x540D;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x8C03;&#x7528;globals()&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6240;&#x6709;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x91CC;&#x80FD;&#x8BBF;&#x95EE;&#x7684;&#x5168;&#x5C40;&#x540D;&#x5B57;&#x3002;</p>
+</li>
+</ul>
+<h3 id="reload-&#x51FD;&#x6570;"><a href="#reload-&#x51FD;&#x6570;" class="headerlink" title="reload()&#x51FD;&#x6570;"></a>reload()&#x51FD;&#x6570;</h3><p>&#x91CD;&#x65B0;&#x6267;&#x884C;&#x6A21;&#x5757;&#x91CC;&#x9876;&#x5C42;&#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reload(module_name)</div></pre></td></tr></table></figure></p>
+<p>module_name&#x653E;<strong>&#x6A21;&#x5757;&#x7684;&#x540D;&#x5B57;</strong>&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x3002;</p>
+<h3 id="Python&#x4E2D;&#x7684;&#x5305;"><a href="#Python&#x4E2D;&#x7684;&#x5305;" class="headerlink" title="Python&#x4E2D;&#x7684;&#x5305;"></a>Python&#x4E2D;&#x7684;&#x5305;</h3><p>&#x7C7B;Java&#xFF0C;&#x52A0;&#x8F7D;&#x5305;&#x540E;&#x91CC;&#x9762;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x3002;</p>
+<hr>
+<h2 id="Python&#x6587;&#x4EF6;I-O"><a href="#Python&#x6587;&#x4EF6;I-O" class="headerlink" title="Python&#x6587;&#x4EF6;I/O"></a>Python&#x6587;&#x4EF6;I/O</h2><h3 id="&#x6253;&#x5370;&#x5230;&#x5C4F;&#x5E55;"><a href="#&#x6253;&#x5370;&#x5230;&#x5C4F;&#x5E55;" class="headerlink" title="&#x6253;&#x5370;&#x5230;&#x5C4F;&#x5E55;"></a>&#x6253;&#x5370;&#x5230;&#x5C4F;&#x5E55;</h3><p>&#x4F7F;&#x7528;print&#x8BED;&#x53E5;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x5B83;&#x4F20;&#x9012;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7528;<strong>&#x9017;&#x53F7;&#x9694;&#x5F00;</strong>&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x6B64;&#x51FD;&#x6570;&#x628A;&#x4F60;&#x4F20;&#x9012;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x8F6C;&#x6362;&#x6210;<strong>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;</strong>&#xFF0C;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x5199;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x3002;</p>
+<h3 id="&#x8BFB;&#x53D6;&#x952E;&#x76D8;&#x8F93;&#x5165;"><a href="#&#x8BFB;&#x53D6;&#x952E;&#x76D8;&#x8F93;&#x5165;" class="headerlink" title="&#x8BFB;&#x53D6;&#x952E;&#x76D8;&#x8F93;&#x5165;"></a>&#x8BFB;&#x53D6;&#x952E;&#x76D8;&#x8F93;&#x5165;</h3><p>raw_input&#x51FD;&#x6570;&#x2014;&#x2014;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6;<strong>&#x4E00;&#x4E2A;&#x884C;</strong>&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;<strong>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</strong>&#xFF08;&#x53BB;&#x6389;&#x7ED3;&#x5C3E;&#x7684;&#x6362;&#x884C;&#x7B26;&#xFF09;</p>
+<p>input&#x51FD;&#x6570;&#x2014;&#x2014;&#x57FA;&#x672C;&#x540C;1&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x5047;&#x8BBE;&#x4F60;&#x7684;&#x8F93;&#x5165;&#x662F;&#x4E00;&#x4E2A;<strong>&#x6709;&#x6548;&#x7684;Python&#x8868;&#x8FBE;&#x5F0F;</strong>&#xFF0C;&#x5E76;<strong>&#x8FD4;&#x56DE;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;</strong>&#x3002;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"> </div><div class="line">str = input(<span class="string">&quot;Enter your input: &quot;</span>);</div><div class="line"><span class="keyword">print</span> <span class="string">&quot;Received input is : &quot;</span>, str</div></pre></td></tr></table></figure></p>
+<p>&#x7ED3;&#x679C;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter your input: [x*5 <span class="keyword">for</span> x <span class="keyword">in</span> range(2,10,2)]</div><div class="line">Recieved input is :  [10, 20, 30, 40]</div></pre></td></tr></table></figure></p>
+<p>&#x5176;&#x4E2D;<code>range(2,10,2)</code>&#x8868;&#x793A;&#x4ECE;2&#x81F3;10&#xFF0C;&#x4EE5;2&#x4E3A;&#x6B65;&#x957F;&#x3002;</p>
+<h3 id="&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#x6587;&#x4EF6;"><a href="#&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#x6587;&#x4EF6;" class="headerlink" title="&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#x6587;&#x4EF6;"></a>&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#x6587;&#x4EF6;</h3><h4 id="open&#x51FD;&#x6570;"><a href="#open&#x51FD;&#x6570;" class="headerlink" title="open&#x51FD;&#x6570;"></a>open&#x51FD;&#x6570;</h4><p>&#x7528;Python&#x5185;&#x7F6E;&#x7684;open()&#x51FD;&#x6570;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;file&#x5BF9;&#x8C61;&#xFF0C;&#x968F;&#x540E;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file object = open(file_name [, access_mode][, buffering])</div></pre></td></tr></table></figure></p>
+<p>&#x53C2;&#x6570;&#x610F;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>file_name&#xFF1A;&#x5305;&#x542B;&#x8981;&#x8BBF;&#x95EE;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x3002;</li>
+<li>access_mode&#xFF1A;&#x51B3;&#x5B9A;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7684;&#x6A21;&#x5F0F;&#xFF1A;&#x53EA;&#x8BFB;&#xFF0C;&#x5199;&#x5165;&#xFF0C;&#x8FFD;&#x52A0;&#x7B49;&#x3002;&#x7C7B;&#x4F3C;C&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x53EA;&#x8BFB;(r)&#x3002;</li>
+<li>buffering:&#x5982;&#x679C;buffering&#x7684;&#x503C;&#x88AB;&#x8BBE;&#x4E3A;0&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#x5BC4;&#x5B58;&#x3002;&#x5982;&#x679C;buffering&#x7684;&#x503C;&#x53D6;1&#xFF0C;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x65F6;&#x4F1A;&#x5BC4;&#x5B58;&#x884C;&#x3002;&#x5982;&#x679C;&#x5C06;buffering&#x7684;&#x503C;&#x8BBE;&#x4E3A;&#x5927;&#x4E8E;1&#x7684;&#x6574;&#x6570;&#xFF0C;&#x8868;&#x660E;&#x4E86;&#x8FD9;&#x5C31;&#x662F;&#x7684;<strong>&#x5BC4;&#x5B58;&#x533A;&#x7684;&#x7F13;&#x51B2;&#x5927;&#x5C0F;</strong>&#x3002;&#x5982;&#x679C;&#x53D6;&#x8D1F;&#x503C;&#xFF0C;&#x5BC4;&#x5B58;&#x533A;&#x7684;&#x7F13;&#x51B2;&#x5927;&#x5C0F;&#x5219;&#x4E3A;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x3002;</li>
+</ul>
+</blockquote>
+<p>file&#x5BF9;&#x8C61;&#x76F8;&#x5173;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;:<br><img src="/2016/12/06/Python&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E03;&#xFF09;/Python&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;.png" alt="Python&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;"></p>
+<h4 id="Close-&#x65B9;&#x6CD5;"><a href="#Close-&#x65B9;&#x6CD5;" class="headerlink" title="Close()&#x65B9;&#x6CD5;"></a>Close()&#x65B9;&#x6CD5;</h4><p>&#x5237;&#x65B0;&#x7F13;&#x51B2;&#x533A;&#x91CC;&#x4EFB;&#x4F55;&#x8FD8;&#x6CA1;&#x5199;&#x5165;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5173;&#x95ED;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E4B;&#x540E;&#x4FBF;&#x4E0D;&#x80FD;&#x518D;&#x8FDB;&#x884C;&#x5199;&#x5165;&#x3002;</p>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x88AB;&#x91CD;&#x65B0;&#x6307;&#x5B9A;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;Python&#x4F1A;&#x5173;&#x95ED;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x8BFB;&#x5199;&#x6587;&#x4EF6;"><a href="#&#x8BFB;&#x5199;&#x6587;&#x4EF6;" class="headerlink" title="&#x8BFB;&#x5199;&#x6587;&#x4EF6;"></a>&#x8BFB;&#x5199;&#x6587;&#x4EF6;</h3><h4 id="Write-&#x65B9;&#x6CD5;"><a href="#Write-&#x65B9;&#x6CD5;" class="headerlink" title="Write()&#x65B9;&#x6CD5;"></a>Write()&#x65B9;&#x6CD5;</h4><p>&#x53EF;&#x5C06;<strong>&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x4E32;</strong>&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p>Python&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x4EE5;&#x662F;<strong>&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;</strong>&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4EC5;&#x4EC5;&#x662F;&#x6587;&#x5B57;&#x3002;</p>
+<p>write()&#x65B9;&#x6CD5;&#x4E0D;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x7ED3;&#x5C3E;&#x4E0D;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x7B26;(&#x2018;\n&#x2019;)&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding=utf-8</span></div><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"> </div><div class="line"><span class="comment"># &#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span></div><div class="line">fo = open(<span class="string">&quot;/tmp/foo.txt&quot;</span>, <span class="string">&quot;wb&quot;</span>)</div><div class="line">fo.write( <span class="string">&quot;Python is a great language.\nYeah its great!!\n&quot;</span>);</div><div class="line"> </div><div class="line"><span class="comment"># &#x5173;&#x95ED;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;</span></div><div class="line">fo.close()<span class="comment">#!/usr/bin/python</span></div></pre></td></tr></table></figure></p>
+<h4 id="read-&#x65B9;&#x6CD5;"><a href="#read-&#x65B9;&#x6CD5;" class="headerlink" title="read()&#x65B9;&#x6CD5;"></a>read()&#x65B9;&#x6CD5;</h4><p>read&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x4ECE;&#x4E00;&#x4E2A;<strong>&#x6253;&#x5F00;&#x7684;</strong>&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x683C;&#x5F0F;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fileObject.read([count])</div></pre></td></tr></table></figure></p>
+<p>&#x88AB;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x662F;&#x8981;&#x4ECE;&#x5DF2;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x7684;<strong>&#x5B57;&#x8282;&#x8BA1;&#x6570;</strong>&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x4ECE;&#x6587;&#x4EF6;&#x7684;&#x5F00;&#x5934;&#x5F00;&#x59CB;&#x8BFB;&#x5165;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F20;&#x5165;count&#xFF0C;&#x5B83;&#x4F1A;&#x5C1D;&#x8BD5;<strong>&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x5730;</strong>&#x8BFB;&#x53D6;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x662F;&#x76F4;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E;&#x3002;</p>
+<h4 id="&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;"><a href="#&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;" class="headerlink" title="&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;"></a>&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;</h4><p>Tell()&#x65B9;&#x6CD5;&#x2014;&#x2014;&#x6587;&#x4EF6;&#x5185;&#x7684;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#xFF08;&#x4E0B;&#x4E00;&#x6B21;&#x7684;&#x8BFB;&#x5199;&#x4F1A;&#x53D1;&#x751F;&#x5728;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x8FD9;&#x4E48;&#x591A;&#x5B57;&#x8282;&#x4E4B;&#x540E;&#xFF09;</p>
+<p>seek&#xFF08;offset [,from]&#xFF09;&#x65B9;&#x6CD5;&#x2014;&#x2014;<strong>&#x6539;&#x53D8;</strong>&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<ul>
+<li><p>Offset&#x53D8;&#x91CF;&#x8868;&#x793A;&#x8981;&#x79FB;&#x52A8;&#x7684;&#x5B57;&#x8282;&#x6570;&#x3002;From&#x53D8;&#x91CF;&#x6307;&#x5B9A;&#x5F00;&#x59CB;&#x79FB;&#x52A8;&#x5B57;&#x8282;&#x7684;&#x53C2;&#x8003;&#x4F4D;&#x7F6E;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;from&#x88AB;&#x8BBE;&#x4E3A;0&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5C06;&#x6587;&#x4EF6;&#x7684;&#x5F00;&#x5934;&#x4F5C;&#x4E3A;&#x79FB;&#x52A8;&#x5B57;&#x8282;&#x7684;&#x53C2;&#x8003;&#x4F4D;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x4E3A;1&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x4F4D;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x5B83;&#x88AB;&#x8BBE;&#x4E3A;2&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E;&#x5C06;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x4F4D;&#x7F6E;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x91CD;&#x547D;&#x540D;&#x548C;&#x5220;&#x9664;&#x6587;&#x4EF6;"><a href="#&#x91CD;&#x547D;&#x540D;&#x548C;&#x5220;&#x9664;&#x6587;&#x4EF6;" class="headerlink" title="&#x91CD;&#x547D;&#x540D;&#x548C;&#x5220;&#x9664;&#x6587;&#x4EF6;"></a>&#x91CD;&#x547D;&#x540D;&#x548C;&#x5220;&#x9664;&#x6587;&#x4EF6;</h3><p>os&#x6A21;&#x5757;&#x3002;</p>
+<h4 id="rename-&#x65B9;&#x6CD5;"><a href="#rename-&#x65B9;&#x6CD5;" class="headerlink" title="rename()&#x65B9;&#x6CD5;"></a>rename()&#x65B9;&#x6CD5;</h4><p>&#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.rename(current_file_name, new_file_name)</div></pre></td></tr></table></figure></p>
+<h4 id="remove-&#x65B9;&#x6CD5;"><a href="#remove-&#x65B9;&#x6CD5;" class="headerlink" title="remove()&#x65B9;&#x6CD5;"></a>remove()&#x65B9;&#x6CD5;</h4><p>&#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.remove(file_name)</div></pre></td></tr></table></figure></p>
+<h3 id="Python&#x91CC;&#x7684;&#x76EE;&#x5F55;"><a href="#Python&#x91CC;&#x7684;&#x76EE;&#x5F55;" class="headerlink" title="Python&#x91CC;&#x7684;&#x76EE;&#x5F55;"></a>Python&#x91CC;&#x7684;&#x76EE;&#x5F55;</h3><p>&#x4F7F;&#x7528;<code>os&#x6A21;&#x5757;</code>&#x521B;&#x5EFA;&#xFF0C;&#x5220;&#x9664;&#x548C;&#x66F4;&#x6539;&#x76EE;&#x5F55;&#x3002;</p>
+<h4 id="mkdir-&#x65B9;&#x6CD5;"><a href="#mkdir-&#x65B9;&#x6CD5;" class="headerlink" title="mkdir()&#x65B9;&#x6CD5;"></a>mkdir()&#x65B9;&#x6CD5;</h4><p>&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x76EE;&#x5F55;&#x4EEC;&#x3002;&#x4F60;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E86;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#x7684;&#x53C2;&#x6570;&#x3002;<br>&#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.mkdir(<span class="string">&quot;newdir&quot;</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="chdir-&#x65B9;&#x6CD5;"><a href="#chdir-&#x65B9;&#x6CD5;" class="headerlink" title="chdir()&#x65B9;&#x6CD5;"></a>chdir()&#x65B9;&#x6CD5;</h4><p>&#x53EF;&#x4EE5;&#x7528;chdir()&#x65B9;&#x6CD5;&#x6765;&#x6539;&#x53D8;&#x5F53;&#x524D;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x9700;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4F60;&#x60F3;&#x8BBE;&#x6210;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#x3002;<br>&#x8BED;&#x6CD5;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.chdir(<span class="string">&quot;newdir&quot;</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="getcwd-&#x65B9;&#x6CD5;"><a href="#getcwd-&#x65B9;&#x6CD5;" class="headerlink" title="getcwd()&#x65B9;&#x6CD5;"></a>getcwd()&#x65B9;&#x6CD5;</h4><p>&#x663E;&#x793A;&#x5F53;&#x524D;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;</p>
+<h4 id="rmdir-&#x65B9;&#x6CD5;"><a href="#rmdir-&#x65B9;&#x6CD5;" class="headerlink" title="rmdir()&#x65B9;&#x6CD5;"></a>rmdir()&#x65B9;&#x6CD5;</h4><p>&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#x4EE5;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x3002;</p>
+<p>&#x5728;&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E4B;&#x524D;&#xFF0C;&#x5B83;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x5E94;&#x8BE5;&#x5148;&#x88AB;&#x6E05;&#x9664;&#x3002;</p>
+<p>&#x76EE;&#x5F55;&#x7684;&#x5B8C;&#x5168;&#x5408;&#x89C4;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x88AB;&#x7ED9;&#x51FA;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x641C;&#x7D22;&#x8BE5;&#x76EE;&#x5F55;&#x3002;</p>
+<h3 id="File&#x65B9;&#x6CD5;"><a href="#File&#x65B9;&#x6CD5;" class="headerlink" title="File&#x65B9;&#x6CD5;"></a>File&#x65B9;&#x6CD5;</h3><p>&#x9664;&#x53BB;&#x4EE5;&#x4E0A;&#x63D0;&#x5230;&#x7684;&#xFF0C;&#x8FD8;&#x6709;&#xFF1A;</p>
+<ul>
+<li><p>file.flush()&#x2014;&#x2014;&#x5237;&#x65B0;&#x6587;&#x4EF6;&#x5185;&#x90E8;&#x7F13;&#x51B2;&#xFF0C;&#x76F4;&#x63A5;&#x628A;&#x5185;&#x90E8;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x6570;&#x636E;&#x7ACB;&#x523B;&#x5199;&#x5165;&#x6587;&#x4EF6;, &#x800C;&#x4E0D;&#x662F;&#x88AB;&#x52A8;&#x7684;&#x7B49;&#x5F85;&#x8F93;&#x51FA;&#x7F13;&#x51B2;&#x533A;&#x5199;&#x5165;&#x3002;</p>
+</li>
+<li><p>file.fileno()&#x2014;&#x2014;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;</p>
+</li>
+<li><p>file.next()&#x2014;&#x2014;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x4E0B;&#x4E00;&#x884C;&#x3002;</p>
+</li>
+<li><p>file.readline([size])&#x2014;&#x2014;&#x8BFB;&#x53D6;&#x6574;&#x884C;&#xFF0C;&#x5305;&#x62EC; &#x201C;\n&#x201D; &#x5B57;&#x7B26;&#x3002;</p>
+</li>
+<li><p>file.readlines([sizehint])&#x2014;&#x2014;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x884C;&#x5E76;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#xFF0C;&#x82E5;&#x7ED9;&#x5B9A;sizeint&gt;0&#xFF0C;&#x8FD4;&#x56DE;&#x603B;&#x548C;&#x5927;&#x7EA6;&#x4E3A;sizeint&#x5B57;&#x8282;&#x7684;&#x884C;, &#x5B9E;&#x9645;&#x8BFB;&#x53D6;&#x503C;&#x53EF;&#x80FD;&#x6BD4;sizhint&#x8F83;&#x5927;, &#x56E0;&#x4E3A;&#x9700;&#x8981;&#x586B;&#x5145;&#x7F13;&#x51B2;&#x533A;&#x3002;</p>
+</li>
+<li><p>file.truncate([size])&#x2014;&#x2014;&#x622A;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x622A;&#x53D6;&#x7684;&#x5B57;&#x8282;&#x901A;&#x8FC7;size&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;&#x3002;</p>
+</li>
+</ul>
+<hr>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x518D;&#x6709;&#x4E00;&#x5929;&#xFF0C;&#x57FA;&#x7840;&#x90E8;&#x5206;&#x5C31;&#x53EF;&#x4EE5;&#x5B66;&#x5B8C;&#x5566;&#xFF0C;&#x6709;&#x4E4B;&#x524D;&#x7684;&#x57FA;&#x7840;&#x5B66;&#x8D77;&#x6765;&#x8FD8;&#x4E0D;&#x7B97;&#x592A;&#x7D2F;&#xFF0C;&#x4E5F;&#x5C31;&#x534A;&#x4E2A;&#x6708;&#xFF0C;&#x6BCF;&#x5929;&#x96F6;&#x661F;&#x82B1;&#x4E2A;&#x4E00;&#x4E2A;&#x5C0F;&#x65F6;&#x5DE6;&#x53F3;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5B66;&#x4E00;&#x4E9B;&#x524D;&#x7AEF;&#x57FA;&#x7840;&#x628A;&#xFF0C;&#x4E0D;&#x7EA0;&#x7ED3;&#x5B66;&#x4E60;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x53EA;&#x8981;&#x5B66;&#x8FDB;&#x53BB;&#x80FD;&#x4E3A;&#x81EA;&#x5DF1;&#x6240;&#x7528;&#x5C31;&#x597D;&#x4E86;&#xFF5E;&#x52A0;&#x6CB9;&#xFF01;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/05/Python学习笔记（六）/" rel="next" title="Python学习笔记（六）">
+                <i class="fa fa-chevron-left"></i> Python学习笔记（六）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/09/前端学习笔记（一）/" rel="prev" title="前端学习笔记（一）">
+                前端学习笔记（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/06/Python学习笔记（七）/"
+           data-title="Python学习笔记（七）" data-url="http://yoursite.com/2016/12/06/Python学习笔记（七）/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/image/头像.jpeg"
+               alt="MinCheng" />
+          <p class="site-author-name" itemprop="name">MinCheng</p>
+          <p class="site-description motion-element" itemprop="description">技术渣渣但爱学习，常年自灌鸡汤的女屌丝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python模块"><span class="nav-number">1.</span> <span class="nav-text">Python模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python模块-1"><span class="nav-number">1.1.</span> <span class="nav-text">Python模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import语句"><span class="nav-number">1.2.</span> <span class="nav-text">import语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From…import语句"><span class="nav-number">1.3.</span> <span class="nav-text">From…import语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From…import-语句"><span class="nav-number">1.4.</span> <span class="nav-text">From…import* 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位模块"><span class="nav-number">1.5.</span> <span class="nav-text">定位模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PYTHONPATH变量"><span class="nav-number">1.6.</span> <span class="nav-text">PYTHONPATH变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名空间和作用域"><span class="nav-number">1.7.</span> <span class="nav-text">命名空间和作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dir-函数"><span class="nav-number">1.8.</span> <span class="nav-text">dir()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#globals-和locals-函数"><span class="nav-number">1.9.</span> <span class="nav-text">globals()和locals()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reload-函数"><span class="nav-number">1.10.</span> <span class="nav-text">reload()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python中的包"><span class="nav-number">1.11.</span> <span class="nav-text">Python中的包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python文件I-O"><span class="nav-number">2.</span> <span class="nav-text">Python文件I/O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打印到屏幕"><span class="nav-number">2.1.</span> <span class="nav-text">打印到屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取键盘输入"><span class="nav-number">2.2.</span> <span class="nav-text">读取键盘输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开和关闭文件"><span class="nav-number">2.3.</span> <span class="nav-text">打开和关闭文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#open函数"><span class="nav-number">2.3.1.</span> <span class="nav-text">open函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Close-方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">Close()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读写文件"><span class="nav-number">2.4.</span> <span class="nav-text">读写文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Write-方法"><span class="nav-number">2.4.1.</span> <span class="nav-text">Write()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#read-方法"><span class="nav-number">2.4.2.</span> <span class="nav-text">read()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件位置"><span class="nav-number">2.4.3.</span> <span class="nav-text">文件位置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名和删除文件"><span class="nav-number">2.5.</span> <span class="nav-text">重命名和删除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rename-方法"><span class="nav-number">2.5.1.</span> <span class="nav-text">rename()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#remove-方法"><span class="nav-number">2.5.2.</span> <span class="nav-text">remove()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python里的目录"><span class="nav-number">2.6.</span> <span class="nav-text">Python里的目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir-方法"><span class="nav-number">2.6.1.</span> <span class="nav-text">mkdir()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chdir-方法"><span class="nav-number">2.6.2.</span> <span class="nav-text">chdir()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getcwd-方法"><span class="nav-number">2.6.3.</span> <span class="nav-text">getcwd()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rmdir-方法"><span class="nav-number">2.6.4.</span> <span class="nav-text">rmdir()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File方法"><span class="nav-number">2.7.</span> <span class="nav-text">File方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MinCheng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhoumc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

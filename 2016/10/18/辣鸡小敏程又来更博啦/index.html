@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>辣鸡小敏程又来更博啦 | MinCheng Go !</title>
+  <meta name="author" content="MinCheng">
+  
+  <meta name="description" content="技术渣渣但爱学习，常年自灌鸡汤的女屌丝">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="辣鸡小敏程又来更博啦"/>
+  <meta property="og:site_name" content="MinCheng Go !"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">MinCheng Go !</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> 辣鸡小敏程又来更博啦</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>#又是一篇水文，嗯（<strong>认真脸</strong>）</p>
+<hr>
+<p>不过话说回来今天确实解决了<strong>几个</strong>问题耶，那就记录一下吧，以后养成<strong>好习惯</strong>。之后再讲几句废话。格式什么的以后再仿照大神学呗，一点点来。</p>
+<h3 id="1-Problem-Solved-1"><a href="#1-Problem-Solved-1" class="headerlink" title="1. Problem Solved 1"></a>1. Problem Solved 1</h3><p>导师要求比赛啦，完全木有思路，但还好有大神队友，一周的时间就从完全无从下手到大致有思路了，棒！分成了几个部分走，不过它的数据还是有点问题。</p>
+<p>我们的题目的<strong>难点</strong>就在于他给的字段非常多，数据量也很大，但是最后也就是一个’二分类’的问题，所以前期的<strong>数据处理与特征提取</strong>就显得尤为重要。</p>
+<p>在第一步我们就面临着一个把数据导入的问题。首先就是考虑导入数据库，tsv文件用excel可以打开不过要<code>**分两趟**</code>，因为几百万条的数据量确实很大了，用记事本打开也是只能看一眼，编程难度会很大。如果能够直接导入数据库的话，写SQL语句会比较简单。tsv文件用Mac上的MySQl workbranch打不开，SQL server打开中文字段乱码，泽清说可以写个小程序。今早我也去下了个SQL server，用它自带的导入工具确实可以导入几个表，但一有中文字段就报错。错误如下：</p>
+<blockquote>
+<p>错误 0xc02020a1: 数据流任务 1: 数据转换失败。列“OVERSEE_RESON”的数据转换返回状态值 4 和状态文本“文本被截断，或者一个或多个字符在目标代码页中没有匹配项。”。<br> (SQL Server 导入和导出向导)</p>
+<p>错误 0xc020902a: 数据流任务 1: “源 - s_info_oversee_tsv.输出[平面文件源输出].列[OVERSEE_RESON]”由于发生截断而失败，而且针对“源 - s_info_oversee_tsv.输出[平面文件源输出].列[OVERSEE_RESON]”的截断行处理设置指定截断时出错。在指定组件的指定对象上出现截断错误。<br> (SQL Server 导入和导出向导)</p>
+<p>错误 0xc0202092: 数据流任务 1: 处理文件“G:\BaiduYunDownload\客户画像\客户画像\s_info_oversee.tsv”的数据行 2 时出错。<br> (SQL Server 导入和导出向导)</p>
+<p>错误 0xc0047038: 数据流任务 1: SSIS 错误代码 DTS_E_PRIMEOUTPUTFAILED。源 - s_info_oversee_tsv 的 PrimeOutput 方法返回了错误代码 0xC0202092。管道引擎调用 PrimeOutput() 时该组件返回了一个失败代码。虽然该失败代码只与该组件有关，但这个错误是致命的，管道已停止执行。可能在此之前已经发出错误消息，提供了有关失败的详细信息。<br> (SQL Server 导入和导出向导)</p>
+</blockquote>
+<p> 解决方式：</p>
+<ul>
+<li>将中文字段类型改成<code>unicode 字符串</code></li>
+<li><p>将长度改大，我改到了2000</p>
+<p>！<a href="./source/image/Q1.jpg">Q1</a></p>
+</li>
+</ul>
+<hr>
+<h3 id="2-Problem-Solved-2"><a href="#2-Problem-Solved-2" class="headerlink" title="2. Problem Solved 2"></a>2. Problem Solved 2</h3><p> 双屏的问题。恩。激动的还发了个票圈嘚瑟一下。主要就是靠一个<code>DVI转VGA转换器</code>。(此处感谢超杰大哥~)<br> 当时确实看了一下显卡是集显，两个VGA口也都是好的，就是连一个另一个找不到，这个确实也不清楚具体的原因。配置的话就是:</p>
+<blockquote>
+<p>右键-&gt;显示-&gt;检测，扩展显示器。<strong>TA-DA!!</strong></p>
+</blockquote>
+<p> 激动的又去找壁纸，为了以后能保持新鲜感，那么就经常登<a href="https://interfacelift.com/wallpaper/downloads/date/any/" target="_blank" rel="external">Wallpaper</a>,定期换壁纸吧。</p>
+<p> ! <a href="./source/image/桌面.ipg">桌面</a></p>
+<hr>
+<h3 id="3-本文重点-废话来啦"><a href="#3-本文重点-废话来啦" class="headerlink" title="3. 本文重点-废话来啦"></a>3. 本文重点-废话来啦</h3><p>明天又要开组合了蓝瘦，啥也没做怎么汇报，害怕，但是估计就能水过去，水过去就到了最近最大的一件事了-&gt;<strong>跑马！</strong>，一个人去陌生的地方，感觉好不一样呀。</p>
+<p>今天还<strong>学会了游泳！</strong>，只去了五次噢，nice！而且健身没偷懒都上了大重量呢。读研期间两个的<em>小目标</em>（游泳hi跑半马）竟然这么快就实现了。</p>
+<p>所以，得出什么结论呢，（前方鸡汤）：任何东西就是<strong>时间问题</strong>，对未来没什么好担忧的，只要一步一个脚印，迷茫着迷茫着也发现自己走了那么远。</p>
+<hr>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>我其实是一个<code>**纸媒至上者**</code>，明明有电子书呀，也可以写博客，但是就是还是喜欢看纸质的，然后写一遍也能够理解，不涂不画真的就好难受，（矫情！）。但是坚持吧，电子的东西看上去更有逻辑一些（主要是能<em>装x</em>)，而且也不大可能会丢吧。</p>
+<p>小敏程，GO！渣渣不可能永远是渣渣，努力学没有学不会的！    </p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Anterior</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2016/10/13/终于装好啦，开熏！/" class="alignright next">Próximo<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comentários</h2>
+
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-10-18 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2016 MinCheng
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
