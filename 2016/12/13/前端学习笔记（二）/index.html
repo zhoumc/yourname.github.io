@@ -1,0 +1,871 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x5728;&amp;#x7B2C;&amp;#x4E8C;&amp;#x6B21;&amp;#x8BFE;&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x518D;&amp;#x5728;W3Cschool&amp;#x4E0A;&amp;#x81EA;&amp;#x5B66;&amp;#x4E00;&amp;#x4E9B;&amp;#x76F8;&amp;#x5173;&amp;#x5185;&amp;#x5BB9;&amp;#x5427;&amp;#x3002;&amp;#x611F;&amp;#x89C9;&amp;#x788E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习笔记（二）">
+<meta property="og:url" content="http://yoursite.com/2016/12/13/前端学习笔记（二）/index.html">
+<meta property="og:site_name" content="Mincheng's Blog">
+<meta property="og:description" content="&amp;#x5728;&amp;#x7B2C;&amp;#x4E8C;&amp;#x6B21;&amp;#x8BFE;&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x518D;&amp;#x5728;W3Cschool&amp;#x4E0A;&amp;#x81EA;&amp;#x5B66;&amp;#x4E00;&amp;#x4E9B;&amp;#x76F8;&amp;#x5173;&amp;#x5185;&amp;#x5BB9;&amp;#x5427;&amp;#x3002;&amp;#x611F;&amp;#x89C9;&amp;#x788E">
+<meta property="og:image" content="http://yoursite.com/2016/12/13/前端学习笔记（二）/CSS字型.png">
+<meta property="og:updated_time" content="2016-12-13T10:43:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端学习笔记（二）">
+<meta name="twitter:description" content="&amp;#x5728;&amp;#x7B2C;&amp;#x4E8C;&amp;#x6B21;&amp;#x8BFE;&amp;#x4E4B;&amp;#x524D;&amp;#xFF0C;&amp;#x518D;&amp;#x5728;W3Cschool&amp;#x4E0A;&amp;#x81EA;&amp;#x5B66;&amp;#x4E00;&amp;#x4E9B;&amp;#x76F8;&amp;#x5173;&amp;#x5185;&amp;#x5BB9;&amp;#x5427;&amp;#x3002;&amp;#x611F;&amp;#x89C9;&amp;#x788E">
+<meta name="twitter:image" content="http://yoursite.com/2016/12/13/前端学习笔记（二）/CSS字型.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/13/前端学习笔记（二）/"/>
+
+
+
+
+
+  <title> 前端学习笔记（二） | Mincheng's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?86bda6c465b38ac227d88824764ac1b8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mincheng's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">敏程のBlog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/About/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/Tags/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/前端学习笔记（二）/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mincheng">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/image/头像.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Mincheng's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Mincheng's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端学习笔记（二）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T08:21:43+08:00">
+                2016-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/13/前端学习笔记（二）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/13/前端学习笔记（二）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x5728;&#x7B2C;&#x4E8C;&#x6B21;&#x8BFE;&#x4E4B;&#x524D;&#xFF0C;&#x518D;&#x5728;W3Cschool&#x4E0A;&#x81EA;&#x5B66;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x5427;&#x3002;&#x611F;&#x89C9;&#x788E;&#x7247;&#x5316;&#x7A0B;&#x5EA6;&#x662F;&#xFF1A;&#x4ED6;&#x4EBA;&#x6559;&#x6388;&gt;&#x89C6;&#x9891;&gt;&#x535A;&#x5BA2;&#x6216;&#x8005;W3Cschool&#x8FD9;&#x79CD;&gt;&#x4E66;&#x3002;<br>&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x53EF;&#x4EE5;&#x91C7;&#x53D6;&#x524D;&#x8005;&#xFF0C;&#x4E0D;&#x8FC7;&#x8981;&#x7CBE;&#x901A;&#x8FD8;&#x662F;&#x5F97;&#x7CFB;&#x7EDF;&#x7684;&#x7814;&#x8BFB;&#x4E66;&#x7C4D;&#x4EE5;&#x53CA;&#x591A;&#x7EC3;&#x5462;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4ECA;&#x5929;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#x3002;<br><a id="more"></a></p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="HTML&#x7A7A;&#x5143;&#x7D20;"><a href="#HTML&#x7A7A;&#x5143;&#x7D20;" class="headerlink" title="HTML&#x7A7A;&#x5143;&#x7D20;"></a>HTML&#x7A7A;&#x5143;&#x7D20;</h3><p><strong>&#x6CA1;&#x6709;&#x5185;&#x5BB9;</strong>&#x7684;HTML&#x5143;&#x7D20;&#x88AB;&#x79F0;&#x4E3A;&#x7A7A;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x7A7A;&#x5143;&#x7D20;&#x5728;<strong>&#x5F00;&#x59CB;&#x6807;&#x7B7E;</strong>&#x4E2D;&#x8FDB;&#x884C;&#x5173;&#x95ED;&#xFF08;&#x4EE5;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x7684;&#x7ED3;&#x675F;&#x800C;&#x7ED3;&#x675F;&#xFF09;&#x3002;<br><code>&lt;br&gt;</code>&#x5C31;&#x662F;&#x6CA1;&#x6709;&#x5173;&#x95ED;&#x6807;&#x7B7E;&#x7684;&#x7A7A;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x5FC5;&#x987B;&#x88AB;&#x5173;&#x95ED;&#x3002;<br>&#x5728;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x4E2D;&#x6DFB;&#x52A0;&#x659C;&#x6760;&#xFF0C;&#x6BD4;&#x5982;<code>&lt;br /&gt;</code>&#x662F;&#x5173;&#x95ED;&#x7A7A;&#x5143;&#x7D20;&#x7684;&#x6B63;&#x786E;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="HTML&#x5C5E;&#x6027;"><a href="#HTML&#x5C5E;&#x6027;" class="headerlink" title="HTML&#x5C5E;&#x6027;"></a>HTML&#x5C5E;&#x6027;</h3><p>&#x5C5E;&#x6027;&#x662F;HTML&#x5143;&#x7D20;&#x63D0;&#x4F9B;&#x7684;<strong>&#x9644;&#x52A0;&#x4FE1;&#x606F;</strong>&#x3002;&#x5C5E;&#x6027;&#x4E00;&#x822C;&#x63CF;&#x8FF0;&#x4E8E;<strong>&#x5F00;&#x59CB;</strong>&#x6807;&#x7B7E;&#x3002;</p>
+<p>&#x5C5E;&#x6027;&#x603B;&#x662F;&#x4EE5;<code>&#x540D;&#x79F0;/&#x503C;&#x5BF9;</code>&#x7684;&#x5F62;&#x5F0F;&#x51FA;&#x73B0;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;name=&#x201D;value&#x201D;&#x3002;<br>&#x5C5E;&#x6027;&#x503C;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x88AB;&#x5305;&#x62EC;&#x5728;<strong>&#x5F15;&#x53F7;</strong>&#x5185;&#x3002;<br>&#x53CC;&#x5F15;&#x53F7;&#x662F;&#x6700;&#x5E38;&#x7528;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;&#x4E5F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x4E2A;&#x522B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6BD4;&#x5982;&#x5C5E;&#x6027;&#x503C;<strong>&#x672C;&#x8EAB;</strong>&#x5C31;&#x542B;&#x6709;&#x53CC;&#x5F15;&#x53F7;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;&#x3002;</p>
+<p>&#x5168;&#xFF1A;<a href="http://www.w3cschool.cn/htmltags/html-reference.html" target="_blank" rel="external">HTML&#x5C5E;&#x6027;&#x53C2;&#x8003;&#x624B;&#x518C;</a></p>
+<p>style&#x2014;&#x2014;&#x884C;&#x5185;&#x6837;&#x5F0F;&#xFF1B;title&#x2014;&#x2014;&#x989D;&#x5916;&#x4FE1;&#x606F; (&#x4F5C;&#x4E3A;&#x5DE5;&#x5177;&#x6761;&#x4F7F;&#x7528;)</p>
+<h3 id="HTML&#x6807;&#x9898;"><a href="#HTML&#x6807;&#x9898;" class="headerlink" title="HTML&#x6807;&#x9898;"></a>HTML&#x6807;&#x9898;</h3><p>&#x6D4F;&#x89C8;&#x5668;&#x4F1A;<strong>&#x81EA;&#x52A8;</strong>&#x5730;&#x5728;&#x6807;&#x9898;&#x7684;&#x524D;&#x540E;<strong>&#x6DFB;&#x52A0;&#x7A7A;&#x884C;</strong>&#x3002;<br>&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4F7F;&#x7528;&#x6807;&#x9898;&#x4E3A;&#x60A8;&#x7684;&#x7F51;&#x9875;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x5185;&#x5BB9;&#x7F16;&#x5236;&#x7D22;&#x5F15;&#x3002;</p>
+<h3 id="HTML&#x6C34;&#x5E73;&#x7EBF;"><a href="#HTML&#x6C34;&#x5E73;&#x7EBF;" class="headerlink" title="HTML&#x6C34;&#x5E73;&#x7EBF;"></a>HTML&#x6C34;&#x5E73;&#x7EBF;</h3><p><code>&lt;hr&gt;</code>&#x6807;&#x7B7E;&#x3002;&#x53EF;&#x7528;&#x4E8E;&#x5206;&#x9694;&#x5185;&#x5BB9;&#x3002;</p>
+<h3 id="HTML&#x6CE8;&#x91CA;"><a href="#HTML&#x6CE8;&#x91CA;" class="headerlink" title="HTML&#x6CE8;&#x91CA;"></a>HTML&#x6CE8;&#x91CA;</h3><p>&#x683C;&#x5F0F;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6CE8;&#x91CA; --&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="HTML&#x6BB5;&#x843D;"><a href="#HTML&#x6BB5;&#x843D;" class="headerlink" title="HTML&#x6BB5;&#x843D;"></a>HTML&#x6BB5;&#x843D;</h3><p>&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x5728;HTML&#x4EE3;&#x7801;&#x4E2D;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x683C;&#x6216;&#x6362;&#x884C;&#x6765;&#x6539;&#x53D8;&#x8F93;&#x51FA;&#x7684;&#x6548;&#x679C;&#x3002;&#x5F53;&#x663E;&#x793A;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x79FB;&#x9664;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x591A;&#x4F59;&#x7684;&#x7A7A;&#x683C;&#x548C;&#x7A7A;&#x884C;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x8FDE;&#x7EED;&#x7684;&#x7A7A;&#x683C;&#x6216;&#x7A7A;&#x884C;&#x90FD;&#x4F1A;&#x88AB;&#x7B97;&#x4F5C;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;HTML &#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8FDE;&#x7EED;&#x7684;&#x7A7A;&#x884C;&#xFF08;&#x6362;&#x884C;&#xFF09;&#x4E5F;&#x88AB;&#x663E;&#x793A;&#x4E3A;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x3002;</p>
+<h3 id="HTML&#x6587;&#x672C;&#x683C;&#x5F0F;&#x5316;"><a href="#HTML&#x6587;&#x672C;&#x683C;&#x5F0F;&#x5316;" class="headerlink" title="HTML&#x6587;&#x672C;&#x683C;&#x5F0F;&#x5316;"></a>HTML&#x6587;&#x672C;&#x683C;&#x5F0F;&#x5316;</h3><p>HTML&#x4F7F;&#x7528;&#x6807;&#x7B7E;<code>&lt;b&gt;</code>&#x4E0E;<code>&lt;i&gt;</code>&#x5BF9;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x672C;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x3002;&#x7C97;&#x4F53;&#xFF0F;&#x659C;&#x4F53;&#x3002;<br>&#x8BE6;&#x89C1;&#x624B;&#x518C;&#x3002;</p>
+<h3 id="HTML&#x94FE;&#x63A5;"><a href="#HTML&#x94FE;&#x63A5;" class="headerlink" title="HTML&#x94FE;&#x63A5;"></a>HTML&#x94FE;&#x63A5;</h3><p>id&#x5C5E;&#x6027;&#x2014;&#x2014;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;HTML&#x6587;&#x6863;<strong>&#x4E66;&#x7B7E;&#x6807;&#x8BB0;</strong>&#x3002;</p>
+<p>&#x4E66;&#x7B7E;&#x2014;&#x2014;&#x662F;&#x4E0D;&#x4EE5;&#x4EFB;&#x4F55;<strong>&#x7279;&#x6B8A;&#x7684;&#x65B9;&#x5F0F;</strong>&#x663E;&#x793A;&#xFF0C;&#x5728;HTML&#x6587;&#x6863;&#x4E2D;&#x662F;&#x4E0D;&#x663E;&#x793A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x8BFB;&#x8005;&#x6765;&#x8BF4;&#x662F;<strong>&#x9690;&#x85CF;</strong>&#x7684;&#x3002;</p>
+<p>&#x63D0;&#x793A;:&#x8BF7;&#x59CB;&#x7EC8;&#x5C06;<strong>&#x6B63;&#x659C;&#x6760;</strong>&#x6DFB;&#x52A0;&#x5230;<strong>&#x5B50;</strong>&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<h3 id="HTML&#x5934;&#x90E8;"><a href="#HTML&#x5934;&#x90E8;" class="headerlink" title="HTML&#x5934;&#x90E8;"></a>HTML&#x5934;&#x90E8;</h3><h4 id="HTML-head-&#x5143;&#x7D20;"><a href="#HTML-head-&#x5143;&#x7D20;" class="headerlink" title="HTML head &#x5143;&#x7D20;"></a>HTML head &#x5143;&#x7D20;</h4><p>&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7684;&#x5934;&#x90E8;&#x6807;&#x7B7E;&#x5143;&#x7D20;&#x3002;&#x5728; <code>&lt;head&gt;</code>&#x5143;&#x7D20;&#x4E2D;&#x4F60;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x811A;&#x672C;&#xFF08;scripts&#xFF09;, &#x6837;&#x5F0F;&#x6587;&#x4EF6;&#xFF08;CSS&#xFF09;&#xFF0C;&#x53CA;&#x5404;&#x79CD;meta&#x4FE1;&#x606F;&#x3002;<br>&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5728;&#x5934;&#x90E8;&#x533A;&#x57DF;&#x7684;&#x5143;&#x7D20;&#x6807;&#x7B7E;&#x4E3A;: <code>&lt;title&gt;, &lt;style&gt;, &lt;meta&gt;, &lt;link&gt;, &lt;script&gt;, &lt;noscript&gt;, and &lt;base&gt;</code>&#x3002;</p>
+<h4 id="HTML-title-&#x5143;&#x7D20;"><a href="#HTML-title-&#x5143;&#x7D20;" class="headerlink" title="HTML title &#x5143;&#x7D20;"></a>HTML title &#x5143;&#x7D20;</h4><p>&#x5B9A;&#x4E49;&#x4E86;&#x4E0D;&#x540C;&#x6587;&#x6863;&#x7684;&#x6807;&#x9898;;&#x6D4F;&#x89C8;&#x5668;&#x5DE5;&#x5177;&#x680F;&#x7684;&#x6807;&#x9898;;&#x663E;&#x793A;&#x5728;&#x6536;&#x85CF;&#x5939;&#x4E2D;&#x7684;&#x6807;&#x9898;;&#x663E;&#x793A;&#x5728;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7ED3;&#x679C;&#x9875;&#x9762;&#x7684;&#x6807;&#x9898;&#x3002;<br>&#x5728;<code>HTML/XHTML</code>&#x6587;&#x6863;&#x4E2D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;</p>
+<h4 id="HTML-base-&#x5143;&#x7D20;"><a href="#HTML-base-&#x5143;&#x7D20;" class="headerlink" title="HTML base &#x5143;&#x7D20;"></a>HTML base &#x5143;&#x7D20;</h4><p>&#x63CF;&#x8FF0;&#x4E86;<strong>&#x57FA;&#x672C;&#x7684;&#x94FE;&#x63A5;&#x5730;&#x5740;/&#x94FE;&#x63A5;&#x76EE;&#x6807;</strong>&#xFF0C;&#x8BE5;&#x6807;&#x7B7E;&#x4F5C;&#x4E3A;HTML&#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x94FE;&#x63A5;&#x6807;&#x7B7E;&#x7684;<strong>&#x9ED8;&#x8BA4;</strong>&#x94FE;&#x63A5;&#x3002;</p>
+<h4 id="HTML-link-&#x5143;&#x7D20;"><a href="#HTML-link-&#x5143;&#x7D20;" class="headerlink" title="HTML link &#x5143;&#x7D20;"></a>HTML link &#x5143;&#x7D20;</h4><p>&#x5B9A;&#x4E49;&#x4E86;&#x6587;&#x6863;&#x4E0E;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x94FE;&#x63A5;&#x5230;&#x6837;&#x5F0F;&#x8868;&#x3002;</p>
+<h4 id="HTML-style-&#x5143;&#x7D20;"><a href="#HTML-style-&#x5143;&#x7D20;" class="headerlink" title="HTML style &#x5143;&#x7D20;"></a>HTML style &#x5143;&#x7D20;</h4><p>&#x5B9A;&#x4E49;&#x4E86;HTML&#x6587;&#x6863;&#x7684;&#x6837;&#x5F0F;&#x6587;&#x4EF6;&#x5F15;&#x7528;&#x5730;&#x5740;&#x3002;<br>&#x5728;<code>&lt;style&gt;</code>&#x5143;&#x7D20;&#x4E2D;&#x4F60;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x6837;&#x5F0F;&#x6587;&#x4EF6;&#x6765;<strong>&#x6E32;&#x67D3;</strong>HTML&#x6587;&#x6863;&#x3002;</p>
+<h4 id="HTML-meta-&#x5143;&#x7D20;"><a href="#HTML-meta-&#x5143;&#x7D20;" class="headerlink" title="HTML meta &#x5143;&#x7D20;"></a>HTML meta &#x5143;&#x7D20;</h4><p>&#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x5143;&#x6570;&#x636E;&#x3002;&#x5143;&#x6570;&#x636E;&#x4E0D;&#x663E;&#x793A;&#x5728;&#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x4F46;&#x4F1A;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;&#x3002;<br>meta&#x5143;&#x7D20;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x7F51;&#x9875;&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x5173;&#x952E;&#x8BCD;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF0C;&#x4F5C;&#x8005;&#xFF0C;&#x548C;&#x5176;&#x4ED6;&#x5143;&#x6570;&#x636E;&#x3002;<br>&#x5143;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#xFF08;&#x5982;&#x4F55;&#x663E;&#x793A;&#x5185;&#x5BB9;&#x6216;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#xFF09;&#xFF0C;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#xFF08;&#x5173;&#x952E;&#x8BCD;&#xFF09;&#xFF0C;&#x6216;&#x5176;&#x4ED6;Web&#x670D;&#x52A1;&#x3002;</p>
+<h4 id="HTML-script-&#x5143;&#x7D20;"><a href="#HTML-script-&#x5143;&#x7D20;" class="headerlink" title="HTML script &#x5143;&#x7D20;"></a>HTML script &#x5143;&#x7D20;</h4><p>&#x6807;&#x7B7E;&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#xFF1A;JavaScript&#x3002;</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS&#x521B;&#x5EFA;"><a href="#CSS&#x521B;&#x5EFA;" class="headerlink" title="CSS&#x521B;&#x5EFA;"></a>CSS&#x521B;&#x5EFA;</h3><h4 id="&#x5916;&#x90E8;&#x6837;&#x5F0F;&#x8868;"><a href="#&#x5916;&#x90E8;&#x6837;&#x5F0F;&#x8868;" class="headerlink" title="&#x5916;&#x90E8;&#x6837;&#x5F0F;&#x8868;"></a>&#x5916;&#x90E8;&#x6837;&#x5F0F;&#x8868;</h4><p>&#x5F53;&#x6837;&#x5F0F;&#x9700;&#x8981;&#x5E94;&#x7528;&#x4E8E;<strong>&#x5F88;&#x591A;</strong>&#x9875;&#x9762;&#x65F6;&#x3002;<br>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x8981;&#x5728;&#x5C5E;&#x6027;&#x503C;&#x4E0E;&#x5355;&#x4F4D;&#x4E4B;&#x95F4;&#x7559;&#x6709;&#x7A7A;&#x683C;&#x3002;</p>
+<h4 id="&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x8868;"><a href="#&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x8868;" class="headerlink" title="&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x8868;"></a>&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x8868;</h4><p>&#x5F53;<strong>&#x5355;&#x4E2A;&#x6587;&#x6863;</strong>&#x9700;&#x8981;&#x7279;&#x6B8A;&#x7684;&#x6837;&#x5F0F;&#x65F6;&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x8868;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>&lt;style&gt; &#x6807;&#x7B7E;</code>&#x5728;&#x6587;&#x6863;&#x5934;&#x90E8;&#x5B9A;&#x4E49;&#x3002;</p>
+<h4 id="&#x5185;&#x8054;&#x6837;&#x5F0F;"><a href="#&#x5185;&#x8054;&#x6837;&#x5F0F;" class="headerlink" title="&#x5185;&#x8054;&#x6837;&#x5F0F;"></a>&#x5185;&#x8054;&#x6837;&#x5F0F;</h4><p>&#x5C06;<strong>&#x8868;&#x73B0;</strong>&#x548C;<strong>&#x5185;&#x5BB9;</strong>&#x6DF7;&#x6742;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4F1A;&#x635F;&#x5931;&#x6389;&#x6837;&#x5F0F;&#x8868;&#x7684;&#x8BB8;&#x591A;&#x4F18;&#x52BF;&#x3002;&#x8BF7;<strong>&#x614E;&#x7528;</strong>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x3002;&#xFF08;&#x4F8B;&#x5982;&#x5F53;&#x6837;&#x5F0F;&#x4EC5;&#x9700;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E0A;&#x5E94;&#x7528;<strong>&#x4E00;&#x6B21;</strong>&#x65F6;&#xFF09;<br>&#x4F7F;&#x7528;&#x5185;&#x8054;&#x6837;&#x5F0F;&#x2014;&#x2014;&#x5728;&#x76F8;&#x5173;&#x7684;&#x6807;&#x7B7E;&#x5185;&#x4F7F;&#x7528;&#x6837;&#x5F0F;<strong>style&#x5C5E;&#x6027;</strong>&#x3002;Style&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EFB;&#x4F55; CSS &#x5C5E;&#x6027;&#x3002;</p>
+<h4 id="&#x591A;&#x91CD;&#x6837;&#x5F0F;"><a href="#&#x591A;&#x91CD;&#x6837;&#x5F0F;" class="headerlink" title="&#x591A;&#x91CD;&#x6837;&#x5F0F;"></a>&#x591A;&#x91CD;&#x6837;&#x5F0F;</h4><p>&#x5982;&#x679C;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;&#x5728;<strong>&#x4E0D;&#x540C;&#x7684;&#x6837;&#x5F0F;&#x8868;</strong>&#x4E2D;&#x88AB;<strong>&#x540C;&#x6837;&#x7684;&#x9009;&#x62E9;&#x5668;</strong>&#x5B9A;&#x4E49;&#xFF0C;&#x90A3;&#x4E48;&#x5C5E;&#x6027;&#x503C;&#x5C06;&#x4ECE;<strong>&#x66F4;&#x5177;&#x4F53;</strong>&#x7684;&#x6837;&#x5F0F;&#x8868;&#x4E2D;&#x88AB;<strong>&#x7EE7;&#x627F;</strong>&#x8FC7;&#x6765;&#x3002; </p>
+<h4 id="&#x591A;&#x91CD;&#x6837;&#x5F0F;&#x5C42;&#x53E0;&#x6B21;&#x5E8F;"><a href="#&#x591A;&#x91CD;&#x6837;&#x5F0F;&#x5C42;&#x53E0;&#x6B21;&#x5E8F;" class="headerlink" title="&#x591A;&#x91CD;&#x6837;&#x5F0F;&#x5C42;&#x53E0;&#x6B21;&#x5E8F;"></a>&#x591A;&#x91CD;&#x6837;&#x5F0F;&#x5C42;&#x53E0;&#x6B21;&#x5E8F;</h4><p>&#x6240;&#x6709;&#x7684;&#x6837;&#x5F0F;&#x4F1A;&#x6839;&#x636E;&#x4E0B;&#x9762;&#x7684;&#x89C4;&#x5219;&#x5C42;&#x53E0;&#x4E8E;&#x4E00;&#x4E2A;<strong>&#x65B0;&#x7684;&#x865A;&#x62DF;&#x6837;&#x5F0F;&#x8868;</strong>&#x4E2D;&#x3002;<br>&#x89C4;&#x5219;&#xFF08;&#x4F18;&#x5148;&#x6743;&#xFF09;&#xFF1A;&#x6D4F;&#x89C8;&#x5668;&#x7F3A;&#x7701;&#x8BBE;&#x7F6E;&lt;&#x5916;&#x90E8;&#x6837;&#x5F0F;&#x8868;&lt;&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x8868;&#xFF08;&#x4F4D;&#x4E8E;<code>&lt;head&gt; &#x6807;&#x7B7E;</code>&#x5185;&#x90E8;&#xFF09;&lt;&#x5185;&#x8054;&#x6837;&#x5F0F;&#xFF08;&#x5728;HTML&#x5143;&#x7D20;&#x5185;&#x90E8;&#xFF09;</p>
+<h3 id="CSS&#x80CC;&#x666F;"><a href="#CSS&#x80CC;&#x666F;" class="headerlink" title="CSS&#x80CC;&#x666F;"></a>CSS&#x80CC;&#x666F;</h3><h4 id="&#x80CC;&#x666F;&#x989C;&#x8272;"><a href="#&#x80CC;&#x666F;&#x989C;&#x8272;" class="headerlink" title="&#x80CC;&#x666F;&#x989C;&#x8272;"></a>&#x80CC;&#x666F;&#x989C;&#x8272;</h4><p>background-color&#x3002;&#x9875;&#x9762;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x4F7F;&#x7528;&#x5728;body&#x7684;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x3002;<br>CSS&#x4E2D;&#xFF0C;&#x989C;&#x8272;&#x503C;&#x901A;&#x5E38;&#x4EE5;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;:</p>
+<p>&#x5341;&#x516D;&#x8FDB;&#x5236; - &#x5982;&#xFF1A;&#x201D;#ff0000&#x201D;<br>RGB - &#x5982;&#xFF1A;&#x201D;rgb(255,0,0)&#x201D;<br>&#x989C;&#x8272;&#x540D;&#x79F0; - &#x5982;&#xFF1A;&#x201D;red&#x201D;</p>
+<h4 id="&#x80CC;&#x666F;&#x56FE;&#x50CF;"><a href="#&#x80CC;&#x666F;&#x56FE;&#x50CF;" class="headerlink" title="&#x80CC;&#x666F;&#x56FE;&#x50CF;"></a>&#x80CC;&#x666F;&#x56FE;&#x50CF;</h4><p>background-image&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x8FDB;&#x884C;<strong>&#x5E73;&#x94FA;&#x91CD;&#x590D;&#x663E;&#x793A;</strong>&#xFF0C;&#x4EE5;<strong>&#x8986;&#x76D6;&#x6574;&#x4E2A;&#x5143;&#x7D20;&#x5B9E;&#x4F53;</strong>&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-image</span><span class="selector-pseudo">:url(&apos;gradient2.png&apos;)</span>;</div></pre></td></tr></table></figure></p>
+<p>&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x9ED8;&#x8BA4;&#x6C34;&#x5E73;&#x6216;&#x5782;&#x76F4;&#x5E73;&#x94FA;&#xFF0C;&#x4E5F;&#x53EF;&#x7528;&#x8BED;&#x53E5;&#x4FEE;&#x6539;&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-repeat</span><span class="selector-pseudo">:repeat-x</span>;</div></pre></td></tr></table></figure></p>
+<p>&#x8BA9;&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x4E0D;&#x5F71;&#x54CD;&#x6587;&#x672C;&#x7684;&#x6392;&#x7248;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>background-repeat</code>&#x5C5E;&#x6027;&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-repeat</span><span class="selector-pseudo">:no-repeat</span>;</div></pre></td></tr></table></figure></p>
+<p>&#x6539;&#x53D8;&#x56FE;&#x50CF;&#x5728;&#x80CC;&#x666F;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F7F;&#x7528;<code>background-position</code>&#x5C5E;&#x6027;&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-position</span><span class="selector-pseudo">:right</span> <span class="selector-tag">top</span>;</div></pre></td></tr></table></figure></p>
+<p>&#x8BE5;&#x56FE;&#x50CF;&#x5C31;&#x4F1A;&#x663E;&#x793A;&#x5728;&#x80CC;&#x666F;&#x7684;&#x53F3;&#x4E0A;&#x89D2;&#x3002;</p>
+<p>&#x7B80;&#x5199;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;<strong>&#x5408;&#x5E76;</strong>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x4E2D;.&#x80CC;&#x666F;&#x989C;&#x8272;&#x7684;&#x7B80;&#x5199;&#x5C5E;&#x6027;&#x4E3A;<code>background</code>&#xFF0C;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> {<span class="attribute">background</span>:<span class="number">#ffffff</span> <span class="built_in">url</span>(<span class="string">&apos;img_tree.png&apos;</span>) no-repeat right top;}</div></pre></td></tr></table></figure></p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x7B80;&#x5199;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x4E3A;&#xFF1A;(&#x65E0;&#x9700;&#x5168;&#x90E8;&#x4F7F;&#x7528;)<br>background-color<br>background-image<br>background-repeat<br>background-attachment<br>background-position</p>
+<p>&#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;&#x7684;&#x80CC;&#x666F;&#x56FE;&#x50CF;&#x3002;&#x4F7F;&#x5F97;&#x56FE;&#x50CF;&#x4E0D;&#x4F1A;&#x968F;&#x7740;&#x9875;&#x9762;&#x7684;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x6EDA;&#x52A8;&#x3002;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-attachment</span><span class="selector-pseudo">:fixed</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="CSS&#x6587;&#x672C;"><a href="#CSS&#x6587;&#x672C;" class="headerlink" title="CSS&#x6587;&#x672C;"></a>CSS&#x6587;&#x672C;</h3><h4 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h4><p>&#x5BF9;&#x4E8E;W3C&#x6807;&#x51C6;&#x7684;CSS&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x5B9A;&#x4E49;&#x4E86;&#x989C;&#x8272;&#x5C5E;&#x6027;&#xFF0C;&#x4F60;&#x8FD8;&#x5FC5;&#x987B;&#x5B9A;&#x4E49;&#x80CC;&#x666F;&#x8272;&#x5C5E;&#x6027;&#x3002;</p>
+<h4 id="&#x6587;&#x672C;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;"><a href="#&#x6587;&#x672C;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;" class="headerlink" title="&#x6587;&#x672C;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;"></a>&#x6587;&#x672C;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</h4><p>&#x7528;&#x6587;&#x672C;&#x6392;&#x5217;&#x5C5E;&#x6027;<code>text-align</code>&#x6765;&#x8BBE;&#x7F6E;&#xFF0C;&#x6587;&#x672C;&#x53EF;&#x5C45;&#x4E2D;&#x3001;&#x5BF9;&#x9F50;&#x5230;&#x5DE6;&#x6216;&#x53F3;&#x4EE5;&#x53CA;&#x4E24;&#x7AEF;&#x5BF9;&#x9F50;&#x3002;<br>&#x5F53;text-align&#x8BBE;&#x7F6E;&#x4E3A;<code>justify</code>&#xFF0C;&#x6BCF;&#x4E00;&#x884C;&#x88AB;&#x5C55;&#x5F00;&#x4E3A;<strong>&#x5BBD;&#x5EA6;&#x76F8;&#x7B49;&#xFF0C;&#x5DE6;&#xFF0C;&#x53F3;&#x5916;&#x8FB9;&#x8DDD;&#x662F;&#x5BF9;&#x9F50;</strong>&#x3002;</p>
+<h4 id="&#x6587;&#x672C;&#x4FEE;&#x9970;"><a href="#&#x6587;&#x672C;&#x4FEE;&#x9970;" class="headerlink" title="&#x6587;&#x672C;&#x4FEE;&#x9970;"></a>&#x6587;&#x672C;&#x4FEE;&#x9970;</h4><p>&#x7528;<code>text-decoration</code>&#x6765;&#x8BBE;&#x7F6E;&#x6216;&#x5220;&#x9664;&#x6587;&#x672C;&#x7684;&#x88C5;&#x9970;&#x3002;<br>&#x4ECE;&#x8BBE;&#x8BA1;&#x7684;&#x89D2;&#x5EA6;&#x770B;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x6765;&#x5220;&#x9664;&#x94FE;&#x63A5;&#x7684;&#x4E0B;&#x5212;&#x7EBF;&#x3002;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> {<span class="attribute">text-decoration</span>:none;}</div></pre></td></tr></table></figure></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x88C5;&#x9970;&#x6587;&#x5B57;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> {<span class="attribute">text-decoration</span>:overline;}</div><div class="line"><span class="selector-tag">h2</span> {<span class="attribute">text-decoration</span>:line-through;}</div><div class="line"><span class="selector-tag">h3</span> {<span class="attribute">text-decoration</span>:underline;}</div></pre></td></tr></table></figure></p>
+<h4 id="&#x6587;&#x672C;&#x8F6C;&#x6362;"><a href="#&#x6587;&#x672C;&#x8F6C;&#x6362;" class="headerlink" title="&#x6587;&#x672C;&#x8F6C;&#x6362;"></a>&#x6587;&#x672C;&#x8F6C;&#x6362;</h4><p>&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x5927;&#x5199;&#x548C;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;<br>&#x53EF;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x5B57;&#x53E5;&#x53D8;&#x6210;&#x5927;&#x5199;&#x6216;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#xFF0C;&#x6216;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x3002;&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-class">.uppercase</span> {<span class="attribute">text-transform</span>:uppercase;}</div><div class="line"><span class="selector-tag">p</span><span class="selector-class">.lowercase</span> {<span class="attribute">text-transform</span>:lowercase;}</div><div class="line"><span class="selector-tag">p</span><span class="selector-class">.capitalize</span> {<span class="attribute">text-transform</span>:capitalize;}</div></pre></td></tr></table></figure></p>
+<h4 id="&#x6587;&#x672C;&#x7F29;&#x8FDB;"><a href="#&#x6587;&#x672C;&#x7F29;&#x8FDB;" class="headerlink" title="&#x6587;&#x672C;&#x7F29;&#x8FDB;"></a>&#x6587;&#x672C;&#x7F29;&#x8FDB;</h4><p>&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> {<span class="attribute">text-indent</span>:<span class="number">50px</span>;}</div></pre></td></tr></table></figure></p>
+<h3 id="CSS&#x5B57;&#x4F53;"><a href="#CSS&#x5B57;&#x4F53;" class="headerlink" title="CSS&#x5B57;&#x4F53;"></a>CSS&#x5B57;&#x4F53;</h3><h4 id="CSS&#x5B57;&#x578B;"><a href="#CSS&#x5B57;&#x578B;" class="headerlink" title="CSS&#x5B57;&#x578B;"></a>CSS&#x5B57;&#x578B;</h4><p>&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x4F53;&#x7CFB;&#x5217;&#x540D;&#x79F0;&#xFF1A;&#x901A;&#x7528;&#x5B57;&#x4F53;&#x7CFB;&#x5217;&#xFF08;&#x62E5;&#x6709;<strong>&#x76F8;&#x4F3C;</strong>&#x5916;&#x89C2;&#x7684;&#x5B57;&#x4F53;&#x7CFB;&#x7EDF;&#x7EC4;&#x5408;&#x3001;&#x7279;&#x5B9A;&#x5B57;&#x4F53;&#x7CFB;&#x5217;&#x3002;<br>&#x5B57;&#x4F53;&#x7CFB;&#x5217;&#xFF1A;<br><img src="/2016/12/13/&#x524D;&#x7AEF;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E8C;&#xFF09;/CSS&#x5B57;&#x578B;.png" alt="CSS&#x5B57;&#x578B;"></p>
+<h4 id="&#x5B57;&#x4F53;&#x6837;&#x5F0F;"><a href="#&#x5B57;&#x4F53;&#x6837;&#x5F0F;" class="headerlink" title="&#x5B57;&#x4F53;&#x6837;&#x5F0F;"></a>&#x5B57;&#x4F53;&#x6837;&#x5F0F;</h4><p>&#x4E3B;&#x8981;&#x662F;&#x7528;&#x4E8E;&#x6307;&#x5B9A;<strong>&#x659C;&#x4F53;</strong>&#x6587;&#x5B57;&#x7684;&#x5B57;&#x4F53;&#x6837;&#x5F0F;&#x5C5E;&#x6027;&#x3002;<br>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x6709;&#x4E09;&#x4E2A;&#x503C;&#xFF1A;&#x6B63;&#x5E38;&#x3001;&#x659C;&#x4F53;&#x4EE5;&#x53CA;&#x503E;&#x659C;&#x7684;&#x6587;&#x5B57;&#x3002;&#xFF08;&#x548C;&#x659C;&#x4F53;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4E0D;&#x592A;&#x652F;&#x6301;&#xFF09;</p>
+<h4 id="&#x5B57;&#x4F53;&#x5927;&#x5C0F;"><a href="#&#x5B57;&#x4F53;&#x5927;&#x5C0F;" class="headerlink" title="&#x5B57;&#x4F53;&#x5927;&#x5C0F;"></a>&#x5B57;&#x4F53;&#x5927;&#x5C0F;</h4><p>&#x4F7F;&#x7528;<code>font-size</code>&#x5C5E;&#x6027;&#x3002;<br>&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x7EDD;&#x5BF9;&#x6216;&#x76F8;&#x5BF9;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<p>&#x7EDD;&#x5BF9;&#x5927;&#x5C0F;&#xFF1A;<br>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x6587;&#x672C;&#x3002;<br>&#x4E0D;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5728;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6539;&#x53D8;&#x6587;&#x672C;&#x5927;&#x5C0F;&#x3002;<br>&#x786E;&#x5B9A;&#x4E86;&#x8F93;&#x51FA;&#x7684;&#x7269;&#x7406;&#x5C3A;&#x5BF8;&#x65F6;&#x7EDD;&#x5BF9;&#x5927;&#x5C0F;&#x5F88;&#x6709;&#x7528;&#x3002;</p>
+<p>&#x76F8;&#x5BF9;&#x5927;&#x5C0F;&#xFF1A;<br>&#x76F8;&#x5BF9;&#x4E8E;&#x5468;&#x56F4;&#x7684;&#x5143;&#x7D20;&#x6765;&#x8BBE;&#x7F6E;&#x5927;&#x5C0F;&#x3002;<br>&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6539;&#x53D8;&#x6587;&#x5B57;&#x5927;&#x5C0F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x5927;&#x5C0F;&#x548C;&#x666E;&#x901A;&#x6587;&#x672C;&#x6BB5;&#x843D;&#x4E00;&#x6837;&#xFF0C;&#x662F;16&#x50CF;&#x7D20;&#xFF08;16px=1em&#xFF09;&#x3002;</p>
+<p>&#x7528;em&#x6765;&#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x2014;&#x2014;&#x4E3A;&#x4E86;&#x907F;&#x514D;Internet Explorer&#x4E2D;&#x65E0;&#x6CD5;&#x8C03;&#x6574;&#x6587;&#x672C;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x767E;&#x5206;&#x6BD4;&#x548C;EM&#x7EC4;&#x5408;&#x2014;&#x2014;&#x5728;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;<code>&lt;body&gt;&#x5143;&#x7D20;</code>&#x7684;&#x9ED8;&#x8BA4;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x7684;&#x662F;&#x767E;&#x5206;&#x6BD4;&#x3002;</p>
+<h3 id="CSS&#x94FE;&#x63A5;"><a href="#CSS&#x94FE;&#x63A5;" class="headerlink" title="CSS&#x94FE;&#x63A5;"></a>CSS&#x94FE;&#x63A5;</h3><p>&#x94FE;&#x63A5;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;<strong>&#x4EFB;&#x4F55;</strong>CSS&#x5C5E;&#x6027;&#xFF08;&#x5982;&#x989C;&#x8272;&#xFF0C;&#x5B57;&#x4F53;&#xFF0C;&#x80CC;&#x666F;&#x7B49;&#xFF09;&#x3002;</p>
+<p>&#x7279;&#x522B;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x6837;&#x5F0F;&#xFF1A;<br>a:link - &#x6B63;&#x5E38;&#xFF0C;&#x672A;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;&#x94FE;&#x63A5;<br>a:visited - &#x7528;&#x6237;&#x5DF2;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;&#x94FE;&#x63A5;<br>a:hover - &#x5F53;&#x7528;&#x6237;&#x9F20;&#x6807;&#x653E;&#x5728;&#x94FE;&#x63A5;&#x4E0A;&#x65F6;<br>a:active - &#x94FE;&#x63A5;&#x88AB;&#x70B9;&#x51FB;&#x7684;&#x90A3;&#x4E00;&#x523B;</p>
+<p>&#x8BBE;&#x7F6E;&#x65F6;&#x7684;&#x987A;&#x5E8F;&#x89C4;&#x5219;&#xFF1A;<br>a:hover&#x5FC5;&#x987B;&#x8DDF;&#x5728;a:link&#x548C;a:visited&#x540E;&#x9762;&#x3001;a:active&#x5FC5;&#x987B;&#x8DDF;&#x5728;a:hover&#x540E;&#x9762;&#x3002;</p>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x53C8;&#x5341;&#x4E8C;&#x70B9;&#xFF0C;&#x611F;&#x89C9;&#x8D8A;&#x7761;&#x8D8A;&#x665A;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#x4ECA;&#x5929;&#x6548;&#x7387;&#x633A;&#x9AD8;&#x7684;&#xFF0C;&#x524D;&#x7AEF;&#x7684;&#x4E1C;&#x897F;&#x611F;&#x89C9;&#x4E5F;&#x6BD4;&#x8F83;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x5427;&#xFF0C;&#x8FD9;&#x5468;&#x628A;W3Cschool&#x4E0A;HTML&#x548C;CSS&#x7684;&#x5185;&#x5BB9;&#x7ED3;&#x675F;&#xFF0C;&#x5B8C;&#x4E86;&#x4E4B;&#x540E;&#x518D;&#x627E;&#x6CFD;&#x6E05;&#x9171;&#x3002;&#x660E;&#x5929;&#x4E13;&#x5FC3;&#x51C6;&#x5907;&#x7EC4;&#x4F1A;&#x4E0A;&#x8981;&#x8BB2;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x6BCF;&#x5929;&#x6709;&#x6536;&#x83B7;&#x5C31;&#x597D;&#x3002;&#x52A0;&#x6CB9;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/09/前端学习笔记（一）/" rel="next" title="前端学习笔记（一）">
+                <i class="fa fa-chevron-left"></i> 前端学习笔记（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/13/Python学习笔记（八）/" rel="prev" title="Python学习笔记（八）">
+                Python学习笔记（八） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/13/前端学习笔记（二）/"
+           data-title="前端学习笔记（二）" data-url="http://yoursite.com/2016/12/13/前端学习笔记（二）/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/image/头像.jpeg"
+               alt="Mincheng" />
+          <p class="site-author-name" itemprop="name">Mincheng</p>
+          <p class="site-description motion-element" itemprop="description">技术渣渣但爱学习，常年自灌鸡汤的女屌丝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/Tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML空元素"><span class="nav-number">1.1.</span> <span class="nav-text">HTML空元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML属性"><span class="nav-number">1.2.</span> <span class="nav-text">HTML属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML标题"><span class="nav-number">1.3.</span> <span class="nav-text">HTML标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML水平线"><span class="nav-number">1.4.</span> <span class="nav-text">HTML水平线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML注释"><span class="nav-number">1.5.</span> <span class="nav-text">HTML注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML段落"><span class="nav-number">1.6.</span> <span class="nav-text">HTML段落</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML文本格式化"><span class="nav-number">1.7.</span> <span class="nav-text">HTML文本格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML链接"><span class="nav-number">1.8.</span> <span class="nav-text">HTML链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML头部"><span class="nav-number">1.9.</span> <span class="nav-text">HTML头部</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-head-元素"><span class="nav-number">1.9.1.</span> <span class="nav-text">HTML head 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-title-元素"><span class="nav-number">1.9.2.</span> <span class="nav-text">HTML title 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-base-元素"><span class="nav-number">1.9.3.</span> <span class="nav-text">HTML base 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-link-元素"><span class="nav-number">1.9.4.</span> <span class="nav-text">HTML link 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-style-元素"><span class="nav-number">1.9.5.</span> <span class="nav-text">HTML style 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-meta-元素"><span class="nav-number">1.9.6.</span> <span class="nav-text">HTML meta 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-script-元素"><span class="nav-number">1.9.7.</span> <span class="nav-text">HTML script 元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS创建"><span class="nav-number">2.1.</span> <span class="nav-text">CSS创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外部样式表"><span class="nav-number">2.1.1.</span> <span class="nav-text">外部样式表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部样式表"><span class="nav-number">2.1.2.</span> <span class="nav-text">内部样式表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联样式"><span class="nav-number">2.1.3.</span> <span class="nav-text">内联样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多重样式"><span class="nav-number">2.1.4.</span> <span class="nav-text">多重样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多重样式层叠次序"><span class="nav-number">2.1.5.</span> <span class="nav-text">多重样式层叠次序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS背景"><span class="nav-number">2.2.</span> <span class="nav-text">CSS背景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#背景颜色"><span class="nav-number">2.2.1.</span> <span class="nav-text">背景颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景图像"><span class="nav-number">2.2.2.</span> <span class="nav-text">背景图像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS文本"><span class="nav-number">2.3.</span> <span class="nav-text">CSS文本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Color"><span class="nav-number">2.3.1.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本的对齐方式"><span class="nav-number">2.3.2.</span> <span class="nav-text">文本的对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本修饰"><span class="nav-number">2.3.3.</span> <span class="nav-text">文本修饰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本转换"><span class="nav-number">2.3.4.</span> <span class="nav-text">文本转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本缩进"><span class="nav-number">2.3.5.</span> <span class="nav-text">文本缩进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS字体"><span class="nav-number">2.4.</span> <span class="nav-text">CSS字体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS字型"><span class="nav-number">2.4.1.</span> <span class="nav-text">CSS字型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体样式"><span class="nav-number">2.4.2.</span> <span class="nav-text">字体样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体大小"><span class="nav-number">2.4.3.</span> <span class="nav-text">字体大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS链接"><span class="nav-number">2.5.</span> <span class="nav-text">CSS链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mincheng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhoumc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
