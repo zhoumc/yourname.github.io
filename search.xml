@@ -28,13 +28,10 @@
 </li>
 <li><p><code>fetchmany</code>&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x591A;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x7684;<strong>&#x6761;&#x6570;</strong>&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;for&#x5FAA;&#x73AF;&#x5373;&#x53EF;&#x8F93;&#x51FA;</p>
 </li>
-<li><p>&#x63D2;&#x5165;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x4E3A;&#xFF1A;</p>
-</li>
 </ul>
+<p>&#x63D2;&#x5165;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x4E3A;&#xFF1A;</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sqli = <span class="string">&quot;insert into xxx values(%s,%s,%s,%s)&quot;</span></div><div class="line">cur.execute(sqli, (...,...,...,...))</div></pre></td></tr></table></figure>
-<ul>
-<li>&#x5F88;&#x57FA;&#x7840;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x8868;&#x540D;&#x4E0D;&#x80FD;&#x662F;&#x4E2D;&#x6587;&#x4E0D;&#x80FD;&#xFF08;&#x6700;&#x597D;&#x522B;&#xFF09;&#x6709;&#x7A7A;&#x683C;&#x3002; </li>
-</ul>
+<p>&#x5F88;&#x57FA;&#x7840;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x8868;&#x540D;&#x4E0D;&#x80FD;&#x662F;&#x4E2D;&#x6587;&#x4E0D;&#x80FD;&#xFF08;&#x6700;&#x597D;&#x522B;&#xFF09;&#x6709;&#x7A7A;&#x683C;&#x3002; </p>
 <h3 id="&#x5FAE;&#x578B;&#x5B9E;&#x6218;"><a href="#&#x5FAE;&#x578B;&#x5B9E;&#x6218;" class="headerlink" title="&#x5FAE;&#x578B;&#x5B9E;&#x6218;"></a>&#x5FAE;&#x578B;&#x5B9E;&#x6218;</h3><p>&#x5F88;&#x597D;&#x4E0A;&#x624B;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x6109;&#x5FEB;&#x7684;&#x73A9;&#x800D;&#x5566;&#x3002;&#x6BD5;&#x8BBE;&#x7EE7;&#x7EED;&#x63A8;&#x8FDB;&#xFF0C;&#x628A;&#x4E4B;&#x524D;&#x722C;&#x7684;&#x5BFC;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#xFF1A;</p>
 <p><img src="/2017/12/13/Python&#x5B66;&#x4E60;&#x4E4B;Mysql&#x914D;&#x7F6E;/&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x5217;&#x8868;.png" alt="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x5217;&#x8868;"></p>
 ]]></content>
