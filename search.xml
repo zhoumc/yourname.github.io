@@ -4,6 +4,118 @@
   
     
     <entry>
+      <title><![CDATA[前端学习笔记（三）]]></title>
+      <url>http://yoursite.com/2018/03/05/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+      <content type="html"><![CDATA[<p>&#x56E0;&#x4E3A;&#x6BD5;&#x8BBE;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x8981;&#x505A;&#x7CFB;&#x7EDF;&#xFF0C;&#x6240;&#x4EE5;&#x518D;&#x8865;&#x5145;&#x4E00;&#x4E9B;&#x524D;&#x7AEF;&#x77E5;&#x8BC6;&#x7684;&#x5B66;&#x4E60;&#xFF0C;&#x8FD9;&#x7BC7;&#x5148;&#x590D;&#x4E60;&#x8865;&#x5145;&#x4E00;&#x4E0B;HTML&#x3001;CSS&#x4EE5;&#x53CA;javascript&#x57FA;&#x7840;&#xFF0C;&#x4ECB;&#x7ECD;&#x975E;&#x5E38;&#x5B9E;&#x7528;&#x7684;&#x524D;&#x7AEF;&#x7F16;&#x5199;&#x5DE5;&#x5177;<code>Emmet</code>&#x3002;&#x4E0B;&#x7BC7;&#x4F1A;&#x5B66;&#x4E60;<code>Bootstrap</code>&#x6846;&#x67B6;&#x3002;<br><a id="more"></a></p>
+<h2 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h2><p>&#x975E;&#x5E38;&#x597D;&#x7684;&#x5305;&#xFF0C;&#x4F7F;&#x5F97;<code>Sublime Text</code>&#x5199;&#x524D;&#x7AEF;&#x5982;&#x6B64;&#x7684;&#x8F7B;&#x677E;&#x3002;&#x53C2;&#x8003;&#x89C1;:<a href="https://docs.emmet.io/abbreviations/syntax/" target="_blank" rel="external">Emmet&#x6587;&#x6863;</a></p>
+<p>&#x4E3E;&#x4F8B;:<code>div&gt;table&gt;tr*2&gt;td*2</code> Tab&#x540E;&#x53D8;&#x6210;&#xFF1A;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">table</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&#x5982;&#x679C;&#x60F3;&#x76F4;&#x63A5;&#x6307;&#x5B9A;id&#x548C;class&#xFF0C;&#x5E76;&#x4E14;&#x540C;&#x65F6;&#x5199;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#xFF1A;<code>h1#id1.class1{title}+a{link}</code>Tab&#x540E;&#x53D8;&#x6210;&#xFF1A;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;id1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;class1&quot;</span>&gt;</span>title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>link<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>&#x7279;&#x522B;&#x7684;&#x7701;&#x529B;&#xFF0C;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x5FEB;&#x6377;&#x7528;&#x6CD5;&#x7B49;&#x5F85;&#x53D1;&#x6398;&#x3002;</p>
+<h2 id="HTML&#x8865;&#x5145;&#x5185;&#x5BB9;"><a href="#HTML&#x8865;&#x5145;&#x5185;&#x5BB9;" class="headerlink" title="HTML&#x8865;&#x5145;&#x5185;&#x5BB9;"></a>HTML&#x8865;&#x5145;&#x5185;&#x5BB9;</h2><h3 id="&#x8868;&#x683C;"><a href="#&#x8868;&#x683C;" class="headerlink" title="&#x8868;&#x683C;"></a>&#x8868;&#x683C;</h3><p>&#x8868;&#x683C;&#x7684;&#x8868;&#x5934;&#x4F7F;&#x7528;<code>&lt;th&gt;</code>&#x6807;&#x7B7E;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#x3002;</p>
+<h3 id="&#x5217;&#x8868;"><a href="#&#x5217;&#x8868;" class="headerlink" title="&#x5217;&#x8868;"></a>&#x5217;&#x8868;</h3><p>&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;<code>&lt;ul&gt;</code>&#x6807;&#x7B7E;;&#x6709;&#x5E8F;&#x5217;&#x8868;&#x59CB;&#x4E8E;<code>&lt;ol&gt;</code>&#x6807;&#x7B7E;;&#x91CC;&#x9762;&#x7528;<code>&lt;li&gt;</code><br>&#x81EA;&#x5B9A;&#x4E49;&#x5217;&#x8868;&#x4EE5;<code>&lt;dl&gt;</code>&#x6807;&#x7B7E;&#x5F00;&#x59CB;&#x3002;&#x6BCF;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5217;&#x8868;&#x9879;&#x4EE5;<code>&lt;dt&gt;</code>&#x5F00;&#x59CB;&#x3002;&#x6BCF;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5217;&#x8868;&#x9879;&#x7684;&#x5B9A;&#x4E49;&#x4EE5;<code>&lt;dd&gt;</code>&#x5F00;&#x59CB;&#x3002;</p>
+<h3 id="&#x5E03;&#x5C40;"><a href="#&#x5E03;&#x5C40;" class="headerlink" title="&#x5E03;&#x5C40;"></a>&#x5E03;&#x5C40;</h3><p>&#x7528;<code>&lt;div&gt;</code>&#x6216;&#x8005;<code>&lt;table&gt;</code>&#x3002;<code>colspan</code>&#x5C5E;&#x6027;&#x6765;&#x53EF;&#x4EE5;&#x6A2A;&#x8DE8;&#x5217;&#x3002;</p>
+<h3 id="&#x8868;&#x5355;"><a href="#&#x8868;&#x5355;" class="headerlink" title="&#x8868;&#x5355;"></a>&#x8868;&#x5355;</h3><p>&#x8868;&#x5355;&#x4F7F;&#x7528;&#x8868;&#x5355;&#x6807;&#x7B7E;<code>&lt;form&gt;</code>&#x6765;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x6587;&#x672C;&#x57DF;&#x901A;&#x8FC7;<code>&lt;input type=&quot;text&quot;&gt;</code>&#x6807;&#x7B7E;&#x6765;&#x8BBE;&#x5B9A;;&#x5BC6;&#x7801;&#x5B57;&#x6BB5;&#x901A;&#x8FC7;&#x6807;&#x7B7E;<code>&lt;input type=&quot;password&quot;&gt;</code>&#x6765;&#x5B9A;&#x4E49;:</p>
+<p><code>&lt;input type=&quot;radio&quot;&gt;</code>&#x6807;&#x7B7E;&#x5B9A;&#x4E49;&#x4E86;&#x8868;&#x5355;&#x5355;&#x9009;&#x6846;&#x9009;&#x9879;&#x3002;<code>&lt;input type=&quot;checkbox&quot;&gt;</code>&#x5B9A;&#x4E49;&#x4E86;&#x590D;&#x9009;&#x6846;</p>
+<p><code>&lt;input type=&quot;submit&quot;&gt;</code>&#x5B9A;&#x4E49;&#x4E86;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x3002;</p>
+<h3 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h3><p><a href="https://www.w3cschool.cn/html/html-quicklist.html" target="_blank" rel="external">HTML&#x901F;&#x67E5;&#x5217;&#x8868;</a></p>
+<h2 id="CSS&#x8865;&#x5145;&#x5185;&#x5BB9;"><a href="#CSS&#x8865;&#x5145;&#x5185;&#x5BB9;" class="headerlink" title="CSS&#x8865;&#x5145;&#x5185;&#x5BB9;"></a>CSS&#x8865;&#x5145;&#x5185;&#x5BB9;</h2><h3 id="&#x80CC;&#x666F;"><a href="#&#x80CC;&#x666F;" class="headerlink" title="&#x80CC;&#x666F;"></a>&#x80CC;&#x666F;</h3><p>CSS &#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x80CC;&#x666F;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="/2018/03/05/&#x524D;&#x7AEF;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E09;&#xFF09;/CSS&#x80CC;&#x666F;&#x5C5E;&#x6027;.png" alt="CSS&#x80CC;&#x666F;&#x5C5E;&#x6027;"></p>
+<p>CSS&#x4E2D;&#xFF0C;&#x989C;&#x8272;&#x503C;&#x901A;&#x5E38;&#x4EE5;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;:</p>
+<blockquote>
+<p>&#x5341;&#x516D;&#x8FDB;&#x5236; - &#x5982;&#xFF1A;&#x201D;#ff0000&#x201D;</p>
+<p>RGB - &#x5982;&#xFF1A;&#x201D;rgb(255,0,0)&#x201D;</p>
+<p>&#x989C;&#x8272;&#x540D;&#x79F0; - &#x5982;&#xFF1A;&#x201D;red&#x201D;</p>
+</blockquote>
+<h3 id="&#x6587;&#x5B57;"><a href="#&#x6587;&#x5B57;" class="headerlink" title="&#x6587;&#x5B57;"></a>&#x6587;&#x5B57;</h3><p>&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x2014;&#x2014;<code>text-align</code>,&#x53EF;&#x53D6;center&#x3001;right&#x3001;justify&#x2014;&#x2014;&#x6BCF;&#x4E00;&#x884C;&#x88AB;&#x5C55;&#x5F00;&#x4E3A;&#x5BBD;&#x5EA6;&#x76F8;&#x7B49;&#xFF0C;&#x5DE6;&#xFF0C;&#x53F3;&#x5916;&#x8FB9;&#x8DDD;&#x662F;&#x5BF9;&#x9F50;&#x3002;</p>
+<p>&#x6587;&#x672C;&#x7F29;&#x8FDB;&#x2014;&#x2014;<code>text-indent</code></p>
+<p>&#x6587;&#x672C;&#x95F4;&#x9694;&#x2014;&#x2014;<code>word-spacing</code></p>
+<h3 id="&#x5B57;&#x4F53;"><a href="#&#x5B57;&#x4F53;" class="headerlink" title="&#x5B57;&#x4F53;"></a>&#x5B57;&#x4F53;</h3><p>&#x6587;&#x672C;&#x7684;&#x5927;&#x5C0F;&#x2014;&#x2014;<code>font-size</code>&#x3002;&#x901A;&#x5E38;&#x4F7F;&#x7528;<code>em</code>&#x5355;&#x4F4D;&#x4EE3;&#x66FF;&#x50CF;&#x7D20;&#x3002;</p>
+<h3 id="&#x94FE;&#x63A5;"><a href="#&#x94FE;&#x63A5;" class="headerlink" title="&#x94FE;&#x63A5;"></a>&#x94FE;&#x63A5;</h3><p>link&#x3001;visited&#x3001;hover&#x3001;active&#x56DB;&#x79CD;&#x72B6;&#x6001;&#x3002;</p>
+<h3 id="&#x8868;&#x683C;-1"><a href="#&#x8868;&#x683C;-1" class="headerlink" title="&#x8868;&#x683C;"></a>&#x8868;&#x683C;</h3><p>&#x6307;&#x5B9A;CSS&#x8868;&#x683C;&#x8FB9;&#x6846;&#xFF0C;&#x4F7F;&#x7528;border&#x5C5E;&#x6027;&#x3002;</p>
+<h3 id="&#x586B;&#x5145;"><a href="#&#x586B;&#x5145;" class="headerlink" title="&#x586B;&#x5145;"></a>&#x586B;&#x5145;</h3><p>Padding&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#x8FB9;&#x6846;&#x4E0E;&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+<h3 id="&#x663E;&#x793A;"><a href="#&#x663E;&#x793A;" class="headerlink" title="&#x663E;&#x793A;"></a>&#x663E;&#x793A;</h3><p>display&#x5C5E;&#x6027;&#x548C;visibility&#x5C5E;&#x6027;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9690;&#x85CF;&#x67D0;&#x4E2A;&#x5143;&#x7D20;</p>
+<h3 id="&#x5B9A;&#x4F4D;"><a href="#&#x5B9A;&#x4F4D;" class="headerlink" title="&#x5B9A;&#x4F4D;"></a>&#x5B9A;&#x4F4D;</h3><p>position&#xFF0C;fixed&#x4EE3;&#x8868;&#x76F8;&#x5BF9;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x662F;&#x56FA;&#x5B9A;&#xFF1B;Relative&#x76F8;&#x5BF9;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x662F;&#x56FA;&#x5B9A;</p>
+<h3 id="&#x603B;&#x7ED3;-1"><a href="#&#x603B;&#x7ED3;-1" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h3><p>&#x8FD9;&#x5757;&#x5982;&#x679C;&#x81EA;&#x5DF1;&#x5EFA;&#x7ACB;&#x6A21;&#x677F;&#x7684;&#x8BDD;&#x4F1A;&#x6BD4;&#x8F83;&#x8D39;&#x4E8B;&#xFF0C;&#x7136;&#x800C;&#x5F88;&#x591A;&#x6846;&#x67B6;&#x7684;&#x51FA;&#x73B0;&#x8BA9;&#x5176;&#x53CD;&#x800C;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x4E86;&#x3002;<br>&#x6240;&#x4EE5;&#x8FD9;&#x8FB9;&#x6BD4;&#x8F83;&#x5FEB;&#x901F;&#x7684;&#x628A;&#x6240;&#x9700;&#x7684;&#x90E8;&#x5206;&#x8FC7;&#x4E86;&#x4E00;&#x904D;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x66F4;&#x52A0;&#x5DE9;&#x56FA;&#xFF0C;&#x505A;&#x7EC3;&#x4E60;&#xFF1A;<a href="https://www.w3cschool.cn/css/css-attribute-selectors.html" target="_blank" rel="external">CSS&#x5B9E;&#x4F8B;</a></p>
+<h2 id="javascript&#x57FA;&#x7840;"><a href="#javascript&#x57FA;&#x7840;" class="headerlink" title="javascript&#x57FA;&#x7840;"></a>javascript&#x57FA;&#x7840;</h2><h3 id="&#x7B80;&#x4ECB;"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</h3><blockquote>
+<p>JavaScript &#x662F;&#x4E00;&#x79CD;<strong>&#x8F7B;&#x91CF;&#x7EA7;</strong>&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x3002;</p>
+<p>JavaScript &#x662F;&#x53EF;&#x63D2;&#x5165;HTML&#x9875;&#x9762;&#x7684;&#x7F16;&#x7A0B;&#x4EE3;&#x7801;&#x3002;</p>
+<p>JavaScript &#x63D2;&#x5165;HTML&#x9875;&#x9762;&#x540E;&#xFF0C;&#x53EF;&#x7531;&#x6240;&#x6709;&#x7684;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x6267;&#x884C;&#x3002;</p>
+</blockquote>
+<p><a href="https://www.w3cschool.cn/javascript/javascript-skillmap.html" target="_blank" rel="external">&#x77E5;&#x8BC6;&#x56FE;&#x8C31;</a></p>
+<h3 id="&#x7528;&#x6CD5;"><a href="#&#x7528;&#x6CD5;" class="headerlink" title="&#x7528;&#x6CD5;"></a>&#x7528;&#x6CD5;</h3><blockquote>
+<p>HTML &#x4E2D;&#x7684;&#x811A;&#x672C;&#x5FC5;&#x987B;&#x4F4D;&#x4E8E; <script> 与 </script> &#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x3002;</p>
+</blockquote>
+<h3 id="&#x8F93;&#x51FA;"><a href="#&#x8F93;&#x51FA;" class="headerlink" title="&#x8F93;&#x51FA;"></a>&#x8F93;&#x51FA;</h3><ul>
+<li>&#x4F7F;&#x7528; window.alert() &#x5F39;&#x51FA;&#x8B66;&#x544A;&#x6846;</li>
+<li>&#x4F7F;&#x7528; document.write() &#x65B9;&#x6CD5;&#x5C06;&#x5185;&#x5BB9;&#x5199;&#x5230;HTML&#x6587;&#x6863;&#x4E2D;&#x3002;</li>
+<li>&#x4F7F;&#x7528; innerHTML &#x5199;&#x5165;&#x5230; HTML &#x5143;&#x7D20;&#x3002;</li>
+<li>&#x4F7F;&#x7528; console.log() &#x5199;&#x5165;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x63A7;&#x5236;&#x53F0;&#x3002;</li>
+</ul>
+<h3 id="&#x8BED;&#x6CD5;"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</h3><p>&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x5B57;&#x9762;&#x91CF; &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<blockquote>
+<p>{firstName:&#x201D;John&#x201D;, lastName:&#x201D;Doe&#x201D;, age:50, eyeColor:&#x201D;blue&#x201D;}</p>
+</blockquote>
+<p>&#x51FD;&#x6570;&#xFF08;Function&#xFF09;&#x5B57;&#x9762;&#x91CF; &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;</p>
+<blockquote>
+<p>function myFunction(a, b) { return a * b;}</p>
+</blockquote>
+<p>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x2014;&#x2014;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; var&#xFF1B;&#x4F7F;&#x7528;&#x7B49;&#x53F7;&#x6765;&#x4E3A;&#x53D8;&#x91CF;&#x8D4B;&#x503C;</p>
+<p>&#x6CE8;&#x91CA;&#x2014;&#x2014;&#x5355;&#x884C;&#x53CC;&#x659C;&#x6760;;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x4EE5;<code>/*</code>&#x5F00;&#x59CB;&#xFF0C;&#x4EE5;<code>*/</code>&#x7ED3;&#x5C3E;&#x3002;</p>
+<p>JavaScript &#x5BF9;&#x5927;&#x5C0F;&#x5199;&#x662F;&#x654F;&#x611F;&#x7684;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x4E2D;&#x58F0;&#x660E;&#x5F88;&#x591A;&#x53D8;&#x91CF;&#x3002;&#x8BE5;&#x8BED;&#x53E5;&#x4EE5;<code>var</code>&#x5F00;&#x5934;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;<strong>&#x9017;&#x53F7;</strong>&#x5206;&#x9694;&#x53D8;&#x91CF;&#x5373;&#x53EF;,&#x53EF;&#x6A2A;&#x8DE8;&#x591A;&#x884C;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x6570;&#x7EC4;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<blockquote>
+<p> var cars=new Array();</p>
+<p> var cars=new Array(&#x201C;Saab&#x201D;,&#x201D;Volvo&#x201D;,&#x201D;BMW&#x201D;);</p>
+<p> var cars=[&#x201C;Saab&#x201D;,&#x201D;Volvo&#x201D;,&#x201D;BMW&#x201D;];</p>
+</blockquote>
+<p>&#x51FD;&#x6570;&#x7528;function+&#x82B1;&#x62EC;&#x53F7;&#x5B9A;&#x4E49;&#xFF0C;&#x82B1;&#x62EC;&#x53F7;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x5C5E;&#x6027;<code>length</code>&#x6765;&#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;:<a href="https://www.w3cschool.cn/javascript/js-strings.html" target="_blank" rel="external">&#x5176;&#x5B83;&#x5E38;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x65B9;&#x6CD5;</a></p>
+<blockquote>
+<p>var txt = &#x201C;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#x201D;;</p>
+<p>var sln = txt.length;</p>
+</blockquote>
+<p>href=&#x201D;#&#x201D;&#x4E0E;href=&#x201D;javascript:void(0)&#x201D;&#x7684;&#x533A;&#x522B;:</p>
+<blockquote>
+<p><code>#</code>&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x951A;&#x662F;#top &#x4E5F;&#x5C31;&#x662F;&#x7F51;&#x9875;&#x7684;&#x4E0A;&#x7AEF;&#x3002;</p>
+<p>&#x800C;javascript:void(0), &#x4EC5;&#x4EC5;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6B7B;&#x94FE;&#x63A5;&#x3002;</p>
+<p>&#x5728;&#x9875;&#x9762;&#x5F88;&#x957F;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4F7F;&#x7528; # &#x6765;&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x7684;&#x5177;&#x4F53;&#x4F4D;&#x7F6E;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;# + id&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6B7B;&#x94FE;&#x63A5;&#x8BF7;&#x4F7F;&#x7528; javascript:void(0)&#x3002;</p>
+</blockquote>
+<h3 id="&#x4E8B;&#x4EF6;"><a href="#&#x4E8B;&#x4EF6;" class="headerlink" title="&#x4E8B;&#x4EF6;"></a>&#x4E8B;&#x4EF6;</h3><p><img src="/2018/03/05/&#x524D;&#x7AEF;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#xFF08;&#x4E09;&#xFF09;/JS&#x4E8B;&#x4EF6;.png" alt="JS&#x4E8B;&#x4EF6;"></p>
+<h3 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;"><a href="#&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;" class="headerlink" title="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;"></a>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h3><p>&#x8BED;&#x6CD5;&#xFF1A;<code>/pattern/modifiers;</code></p>
+<ul>
+<li><p>search()&#x65B9;&#x6CD5;&#x2014;&#x2014;&#x7528;&#x4E8E;&#x68C0;&#x7D22;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6216;&#x68C0;&#x7D22;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;</p>
+</li>
+<li><p>replace()&#x65B9;&#x6CD5;&#x2014;&#x2014;&#x7528;&#x4E8E;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7528;&#x4E00;&#x4E9B;&#x5B57;&#x7B26;&#x66FF;&#x6362;&#x53E6;&#x4E00;&#x4E9B;&#x5B57;&#x7B26;&#xFF0C;&#x6216;&#x66FF;&#x6362;&#x4E00;&#x4E2A;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4FEE;&#x9970;&#x7B26;&#x53EF;&#x4EE5;&#x5728;&#x5168;&#x5C40;&#x641C;&#x7D22;&#x4E2D;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;:<br>i&#x2014;&#x2014;&#x6267;&#x884C;&#x5BF9;&#x5927;&#x5C0F;&#x5199;&#x4E0D;&#x654F;&#x611F;&#x7684;&#x5339;&#x914D;<br>g&#x2014;&#x2014;&#x6267;&#x884C;&#x5168;&#x5C40;&#x5339;&#x914D;&#xFF08;&#x67E5;&#x627E;&#x6240;&#x6709;&#x5339;&#x914D;&#x800C;&#x975E;&#x5728;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x540E;&#x505C;&#x6B62;&#xFF09;<br>m&#x2014;&#x2014;&#x6267;&#x884C;&#x591A;&#x884C;&#x5339;&#x914D;</p>
+<p><a href="https://www.w3cschool.cn/javascript/js-regexp.html" target="_blank" rel="external">&#x5177;&#x4F53;&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;</a></p>
+<h3 id="&#x603B;&#x7ED3;-2"><a href="#&#x603B;&#x7ED3;-2" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h3><p>javascript&#x786E;&#x5B9E;&#x6BD4;&#x8F83;&#x8F7B;&#x91CF;&#x7EA7;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x5B66;&#x8FC7;C&#x3001;Java&#x4E4B;&#x540E;&#x4E0A;&#x624B;&#x8FD9;&#x4E2A;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x8BED;&#x6CD5;&#x5F88;&#x7C7B;&#x4F3C;&#x3002;&#x6709;&#x4E86;&#x5B83;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x7CFB;&#x7EDF;&#x524D;&#x7AEF;&#x66F4;&#x52A0;&#x7684;&#x7075;&#x6D3B;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x8FD8;&#x662F;&#x90A3;&#x4E24;&#x4E2A;&#xFF1A;</p>
+<blockquote>
+<p>&#x67E5;&#x627E;&#x5143;&#x7D20;&#x2014;&#x2014;<code>x=document.getElementById(&quot;demo&quot;)</code></p>
+<p>&#x6539;&#x53D8;&#x5185;&#x5BB9;&#x2014;&#x2014;<code>x.innerHTML=&quot;Hello JavaScript&quot;</code></p>
+</blockquote>
+<p>&#x96BE;&#x7684;&#x90E8;&#x5206;&#x8FD8;&#x662F;&#x4F1A;&#x5F88;&#x96BE;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x60F3;&#x8981;&#x505A;&#x7684;&#x66F4;&#x590D;&#x6742;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x7684;&#x6DF1;&#x5165;&#x5B66;&#x4E60;&#x3002;</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[前端学习（三）]]></title>
+      <url>http://yoursite.com/2018/03/05/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89-1/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[前端学习（三）]]></title>
+      <url>http://yoursite.com/2018/03/05/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Python学习之配置Mysql]]></title>
       <url>http://yoursite.com/2017/12/13/Python%E5%AD%A6%E4%B9%A0%E4%B9%8BMysql%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<p>&#x4E4B;&#x524D;&#x5F00;&#x53D1;&#x8FD8;&#x662F;<code>JDBC</code>&#x7528;&#x7684;&#x591A;&#x4E00;&#x4E9B;&#xFF0C;&#x8FD9;&#x8FB9;Python-mysql&#x4E5F;&#x662F;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#xFF0C;&#x53EA;&#x4F1A;&#x66F4;&#x7B80;&#x4FBF;&#x3002;</p>
