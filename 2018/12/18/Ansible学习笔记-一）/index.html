@@ -90,10 +90,13 @@
 <meta property="og:url" content="http://yoursite.com/2018/12/18/Ansible学习笔记-一）/index.html">
 <meta property="og:site_name" content="Mincheng's Blog">
 <meta property="og:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x5F00;&amp;#x59CB;&amp;#x91CD;&amp;#x65B0;&amp;#x542F;&amp;#x7528;&amp;#x535A;&amp;#x5BA2;&amp;#x3002;&amp;#x55EF;&amp;#x3002;&amp;#x4E4B;&amp;#x524D;&amp;#x90FD;&amp;#x662F;&amp;#x5728;&amp;#x8BFB;&amp;#x7814;&amp;#x671F;&amp;#x95F4;&amp;#x5B66;&amp;#x7684;&amp;#x4E00;">
-<meta property="og:updated_time" content="2018-12-28T01:55:44.571Z">
+<meta property="og:image" content="http://yoursite.com/2018/12/18/Ansible学习笔记-一）/Ansible学习笔记/文件操作1.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/18/Ansible学习笔记-一）/Ansible学习笔记/文件操作2.png">
+<meta property="og:updated_time" content="2018-12-28T03:13:37.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ansible学习笔记(一）">
 <meta name="twitter:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x5F00;&amp;#x59CB;&amp;#x91CD;&amp;#x65B0;&amp;#x542F;&amp;#x7528;&amp;#x535A;&amp;#x5BA2;&amp;#x3002;&amp;#x55EF;&amp;#x3002;&amp;#x4E4B;&amp;#x524D;&amp;#x90FD;&amp;#x662F;&amp;#x5728;&amp;#x8BFB;&amp;#x7814;&amp;#x671F;&amp;#x95F4;&amp;#x5B66;&amp;#x7684;&amp;#x4E00;">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/18/Ansible学习笔记-一）/Ansible学习笔记/文件操作1.png">
 
 
 
@@ -412,7 +415,22 @@
 <li>copy&#x6A21;&#x5757;/fetch&#x6A21;&#x5757;&#xFF1A;&#x5C06;Ansible&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;/&#x4ECE;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x4E2D;&#x62C9;&#x53D6;&#x6587;&#x4EF6;&#x5230;Ansible&#x4E3B;&#x673A;&#x3002;</li>
 </ul>
 <p>&#x5E38;&#x7528;&#x53C2;&#x6570;&#xFF1A;src&#x3001;dest&#x3001;content&#xFF08;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x6B64;&#x65F6;dest&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x800C;&#x4E0D;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF09;&#x3002;</p>
+<p><img src="/2018/12/18/Ansible&#x5B66;&#x4E60;&#x7B14;&#x8BB0;-&#x4E00;&#xFF09;/Ansible&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/&#x6587;&#x4EF6;&#x64CD;&#x4F5C;1.png" alt="&#x6587;&#x4EF6;&#x64CD;&#x4F5C;1"></p>
 <p>&#x793A;&#x4F8B;&#xFF1A;<code>ansible test1 -m copy -a &quot;src=/testdir/copytest dest=/opt/&quot;</code></p>
+<ul>
+<li>file&#x6A21;&#x5757;&#xFF1A;</li>
+</ul>
+<p><img src="/2018/12/18/Ansible&#x5B66;&#x4E60;&#x7B14;&#x8BB0;-&#x4E00;&#xFF09;/Ansible&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/&#x6587;&#x4EF6;&#x64CD;&#x4F5C;2.png" alt="&#x6587;&#x4EF6;&#x64CD;&#x4F5C;2"></p>
+<ul>
+<li><p>blockinfile&#x6A21;&#x5757;&#xFF1A;&#x5728;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x6BB5;&#x6587;&#x672C;&#xFF0C;&#x6587;&#x672C;&#x4E0A;&#x505A;&#x4E86;&#x8BB0;&#x53F7;&#x3002;&#x5F00;&#x59CB;&#x6807;&#x8BB0;&#x4E3A;BEGIN ANSIBLE MANAGED BLOCK&#xFF1B;&#x7ED3;&#x675F;&#x6807;&#x8BB0;&#x4E3A;END ANSIBLE MANAGED BLOCK&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;marker&#x53C2;&#x6570;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;-<code>marker=#{mark}test</code></p>
+</li>
+<li><p>lineinfile&#x6A21;&#x5757;&#xFF1A;&#x6DFB;&#x52A0;&#x548C;&#x5220;&#x9664;&#x884C;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x3002;</p>
+</li>
+<li><p>find&#x6A21;&#x5757;&#xFF1A;&#x5728;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x4E2D;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x6587;&#x4EF6;&#xFF08;recurse&#x6307;&#x5B9A;yes&#x65F6;&#x4F1A;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x67E5;&#x627E;&#x3002;&#xFF09;</p>
+</li>
+<li><p>replace&#x6A21;&#x5757;&#xFF1A;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x66FF;&#x6362;&#x6587;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+</li>
+</ul>
 
       
     </div>
