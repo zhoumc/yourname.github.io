@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/12/18/Ansible学习笔记-一）/index.html">
 <meta property="og:site_name" content="Mincheng's Blog">
 <meta property="og:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x5F00;&amp;#x59CB;&amp;#x91CD;&amp;#x65B0;&amp;#x542F;&amp;#x7528;&amp;#x535A;&amp;#x5BA2;&amp;#x3002;&amp;#x55EF;&amp;#x3002;&amp;#x4E4B;&amp;#x524D;&amp;#x90FD;&amp;#x662F;&amp;#x5728;&amp;#x8BFB;&amp;#x7814;&amp;#x671F;&amp;#x95F4;&amp;#x5B66;&amp;#x7684;&amp;#x4E00;">
-<meta property="og:updated_time" content="2018-12-18T01:27:46.663Z">
+<meta property="og:updated_time" content="2018-12-28T01:55:44.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ansible学习笔记(一）">
 <meta name="twitter:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x5F00;&amp;#x59CB;&amp;#x91CD;&amp;#x65B0;&amp;#x542F;&amp;#x7528;&amp;#x535A;&amp;#x5BA2;&amp;#x3002;&amp;#x55EF;&amp;#x3002;&amp;#x4E4B;&amp;#x524D;&amp;#x90FD;&amp;#x662F;&amp;#x5728;&amp;#x8BFB;&amp;#x7814;&amp;#x671F;&amp;#x95F4;&amp;#x5B66;&amp;#x7684;&amp;#x4E00;">
@@ -375,7 +375,45 @@
 <p>&#x73B0;&#x5728;&#x5DE5;&#x4F5C;&#x9700;&#x8981;&#x7EE7;&#x7EED;&#x5B66;&#x4E60;&#xFF0C;&#x867D;&#x7136;&#x65B9;&#x5411;&#x6709;&#x70B9;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x8FD0;&#x7EF4;&#x3001;Linux&#x3001;&#x811A;&#x672C;&#x7B49;&#x7B49;&#x4F46;&#x5E94;&#x8BE5;&#x90FD;&#x662F;&#x76F8;&#x901A;&#x7684;&#x3002;&#x52A0;&#x6CB9;&#xFF5E;</p>
 <p>PS:&#x9884;&#x89C8;&#x5FEB;&#x6377;&#x952E;:<code>command+option+o</code></p>
 <a id="more"></a>
-<h3 id="Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</h3>
+<h3 id="Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>Ansible&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</h3><p>Ansible&#x662F;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;/&#x81EA;&#x52A8;&#x5316;&#x8FD0;&#x7EF4;&#x5DE5;&#x5177;&#x3002;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4E00;&#x4E9B;&#x6279;&#x91CF;&#x5DE5;&#x4F5C;&#x6216;&#x8005;&#x91CD;&#x590D;&#x6027;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p><strong>&#x53EA;&#x9700;&#x8981;&#x4F9D;&#x8D56;ssh</strong>&#xFF0C;&#x4E0D;&#x7528;&#x5728;&#x53D7;&#x7BA1;&#x4E3B;&#x673A;&#x4E0A;&#x88C5;Agent&#x3002;</p>
+<p>&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li><p>ansible&#x6240;&#x5728;&#x4E3B;&#x673A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ssh&#x8FDE;&#x63A5;&#x5230;&#x53D7;&#x7BA1;&#x4E3B;&#x673A;</p>
+</li>
+<li><p>&#x53D7;&#x7BA1;&#x4E3B;&#x673A;&#x7684;IP&#x5730;&#x5740;&#x7B49;&#x4FE1;&#x606F;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x5230;Ansible&#x7684;<code>&#x7BA1;&#x7406;&#x6E05;&#x5355;</code>&#x4E2D;&#x3002;(Inventory)</p>
+</li>
+</ul>
+<h3 id="Ansible&#x7684;&#x5B89;&#x88C5;"><a href="#Ansible&#x7684;&#x5B89;&#x88C5;" class="headerlink" title="Ansible&#x7684;&#x5B89;&#x88C5;"></a>Ansible&#x7684;&#x5B89;&#x88C5;</h3><p>&#x53C2;&#x89C1;&#x5468;&#x62A5;&#x3002;</p>
+<h3 id="Ansible&#x7684;&#x914D;&#x7F6E;"><a href="#Ansible&#x7684;&#x914D;&#x7F6E;" class="headerlink" title="Ansible&#x7684;&#x914D;&#x7F6E;"></a>Ansible&#x7684;&#x914D;&#x7F6E;</h3><p>&#x6E05;&#x5355;&#x5730;&#x5740;&#xFF1A;<code>/etc/ansible/hosts</code>&#x3002;</p>
+<p>&#x4E0D;&#x4EC5;&#x4EC5;&#x8981;&#x5C06;&#x53D7;&#x7BA1;&#x4E3B;&#x673A;&#x7684;IP&#x6DFB;&#x52A0;&#x8FDB;&#x8BE5;&#x6587;&#x4EF6;&#x5185;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x8BE5;&#x4E3B;&#x673A;&#x7684;ssh&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x6DFB;&#x52A0;&#x522B;&#x540D;&#xFF1A;&#x5728;&#x6700;&#x5F00;&#x59CB;&#x6307;&#x5B9A;&#x522B;&#x540D;&#xFF0C;&#x6B64;&#x65F6;&#x4E3B;&#x673A;&#x7684;IP&#x5730;&#x5740;&#x5FC5;&#x987B;&#x7528;<code>ansible_host</code>&#x5173;&#x952E;&#x8BCD;&#x6307;&#x660E;&#x3002;</p>
+<p>&#x5BC6;&#x94A5;&#x8BA4;&#x8BC1;&#x914D;&#x7F6E;&#x3001;&#x6E05;&#x5355;&#x652F;&#x6301;<strong>&#x5206;&#x7EC4;</strong>&#x540C;&#x4E00;&#x4E3B;&#x673A;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x88AB;&#x5206;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x91CC;</p>
+<p>YAML&#x8BED;&#x6CD5; INI&#x98CE;&#x683C;</p>
+<h3 id="Ansible&#x6A21;&#x5757;&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#Ansible&#x6A21;&#x5757;&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="Ansible&#x6A21;&#x5757;&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>Ansible&#x6A21;&#x5757;&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h3><p><strong>&#x4E00;&#x3001;hosts&#xFF1A;</strong>ansible&#x7684;&#x914D;&#x7F6E;&#x6E05;&#x5355;&#xFF0C;&#x5C06;&#x4E3B;&#x673A;&#x7684;&#x4FE1;&#x606F;&#x6DFB;&#x52A0;&#x8FDB;&#x8BE5;&#x6E05;&#x5355;&#x5185;&#xFF08;IP&#x3001;ssh&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF09;&#x5373;&#x53EF;&#x7BA1;&#x7406;&#x8BE5;&#x4E3B;&#x673A;&#x3002;</p>
+<ul>
+<li><p>&#x6E05;&#x5355;&#x652F;&#x6301;&#x5206;&#x7EC4;&#xFF0C;&#x540C;&#x4E00;&#x4E3B;&#x673A;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x88AB;&#x5206;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x91CC;</p>
+</li>
+<li><p>&#x6E05;&#x5355;&#x652F;&#x6301;&#x6DFB;&#x52A0;&#x522B;&#x540D;&#xFF0C;&#x4F46;&#x9700;&#x5728;&#x6700;&#x5F00;&#x59CB;&#x6307;&#x5B9A;&#x522B;&#x540D;&#xFF0C;&#x4E14;&#x6B64;&#x65F6;&#x4E3B;&#x673A;&#x7684;IP&#x5730;&#x5740;&#x5FC5;&#x987B;&#x7528;ansible_host&#x5173;&#x952E;&#x8BCD;&#x6307;&#x660E;</p>
+</li>
+<li><p>&#x6E05;&#x5355;&#x652F;&#x6301;&#x5BC6;&#x94A5;&#x8BA4;&#x8BC1;&#xFF0C;&#x914D;&#x7F6E;&#x540E;&#x7684;&#x7BA1;&#x7406;&#x8282;&#x70B9;&#x548C;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x57FA;&#x4E8E;&#x5BC6;&#x94A5;&#xFF08;&#x65E0;&#x5BC6;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#xFF09;&#x7684;SSH&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x4E8C;&#x3001;ansible&#x6A21;&#x5757;&#xFF1A;</strong>ansible&#x6709;&#x5F88;&#x591A;&#x4E2A;&#x529F;&#x80FD;&#x6A21;&#x5757;&#x3002;</p>
+<ul>
+<li><p>[ansible-doc &#x2013;l] &#x53EF;&#x4EE5;&#x67E5;&#x770B;ansible&#x6709;&#x54EA;&#x4E9B;&#x6A21;&#x5757;</p>
+</li>
+<li><p>[ansible-doc &#x2013;s &#x6A21;&#x5757;&#x540D;] &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x7279;&#x5B9A;&#x6A21;&#x5757;&#x7684;&#x8BE6;&#x7EC6;&#x7528;&#x6CD5;&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x4E09;&#x3001;ansible&#x7684;&#x5E42;&#x7B49;&#x6027;&#xFF1A;</strong>ansible&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x91CD;&#x590D;&#x6267;&#x884C;&#x4E00;&#x9879;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x76F8;&#x540C;&#x3002;&#x5176;&#x4EE5;&#x7ED3;&#x679C;&#x4E3A;&#x5BFC;&#x5411;&#xFF0C;&#x6211;&#x4EEC;&#x5236;&#x5B9A;&#x4E86;&#x201C;&#x76EE;&#x6807;&#x72B6;&#x6001;&#x201D;&#xFF0C;ansible&#x4F1A;&#x81EA;&#x52A8;&#x5224;&#x65AD;&#x201C;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x201D;&#x4E0E;&#x201C;&#x76EE;&#x6807;&#x72B6;&#x6001;&#x201D;&#x662F;&#x5426;&#x4E00;&#x81F4;&#xFF0C;<strong>&#x4E00;&#x81F4;&#x5219;&#x4E0D;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x4E00;&#x81F4;&#x5219;&#x5C06;&#x201C;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x201D;&#x53D8;&#x6210;&#x201C;&#x76EE;&#x6807;&#x72B6;&#x6001;&#x201D;</strong>&#x3002;</p>
+<h3 id="&#x5E38;&#x7528;&#x6A21;&#x5757;&#x4E4B;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;"><a href="#&#x5E38;&#x7528;&#x6A21;&#x5757;&#x4E4B;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;" class="headerlink" title="&#x5E38;&#x7528;&#x6A21;&#x5757;&#x4E4B;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;"></a>&#x5E38;&#x7528;&#x6A21;&#x5757;&#x4E4B;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</h3><p>&#x76F4;&#x63A5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8FD0;&#x884C;&#x7684;ansible&#x547D;&#x4EE4;&#xFF1A;ad-hoc&#x547D;&#x4EE4;</p>
+<ul>
+<li>copy&#x6A21;&#x5757;/fetch&#x6A21;&#x5757;&#xFF1A;&#x5C06;Ansible&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;/&#x4ECE;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x4E2D;&#x62C9;&#x53D6;&#x6587;&#x4EF6;&#x5230;Ansible&#x4E3B;&#x673A;&#x3002;</li>
+</ul>
+<p>&#x5E38;&#x7528;&#x53C2;&#x6570;&#xFF1A;src&#x3001;dest&#x3001;content&#xFF08;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x6B64;&#x65F6;dest&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x800C;&#x4E0D;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF09;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;<code>ansible test1 -m copy -a &quot;src=/testdir/copytest dest=/opt/&quot;</code></p>
+
       
     </div>
 
@@ -602,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible的基本概念"><span class="nav-number">1.</span> <span class="nav-text">Ansible的基本概念</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible的基本概念"><span class="nav-number">1.</span> <span class="nav-text">Ansible的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible的安装"><span class="nav-number">2.</span> <span class="nav-text">Ansible的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible的配置"><span class="nav-number">3.</span> <span class="nav-text">Ansible的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible模块的基本使用"><span class="nav-number">4.</span> <span class="nav-text">Ansible模块的基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用模块之文件操作"><span class="nav-number">5.</span> <span class="nav-text">常用模块之文件操作</span></a></li></ol></div>
             
 
           </div>
